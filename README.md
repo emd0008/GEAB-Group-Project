@@ -64,3 +64,20 @@
         * In progress
     * As an End User I want To be able to schedule a dog walk/groom appointment so that I can add it to my calendar.
         * In progress
+
+DATABASE SETUP
+
+* TABLES:
+  * category: id, name
+  * subcategory: id, name, parent (FK - category.id)
+  * product: id, name, description, price, image, subcategory (FK - subcategory.id)
+
+* STORED PROCEDURES:
+  * AllProducts()
+    * Returns id, name, description, price, image, SubcatID, subcategory, CatID, category
+  * ProductByID(id: number)
+    * Returns id, name, description, price, image, SubcatID, subcategory, CatID, category
+  * ProductsByCategory(id: number)
+    * Returns id, name, description, price, image, SubcatID, subcategory, CatID, category
+  * ProductsBySubcategory(id: number)
+    * Returns id, name, description, price, image, SubcatID, subcategory, CatID, category
