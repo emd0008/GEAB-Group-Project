@@ -18,3 +18,8 @@
     * Vet page with...
         * A form to post a question to a vet
         * To scheledule an appointment
+    * Other services page with...
+        * Pet sitters
+        * Dog walkers
+        * Training
+        * To scheledule an appointment
