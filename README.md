@@ -23,7 +23,9 @@
         * Dog walkers
         * Training
         * To scheledule an appointment
+
 ### User Stories
+* User Stories in Progress
     * As an End User I want An attractive web page so that I can view all types of adoptions.
         * In progress
     * As an End User I want To view a sampling of available products so that I can easily see what types of items are available.
