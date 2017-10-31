@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "test": "soruce variables && npm run dev",
+    "test": "source variables && npm run dev",
     "start": "npm run build:ts && npm run dev",
     "build:ts": "tsc -p .",
     "server": "node server/index.js",
@@ -51,3 +51,4 @@
     "nodemon": "^1.12.1"   
   }
 }
+
