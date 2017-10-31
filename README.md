@@ -22,3 +22,4 @@
         * Pet sitters
         * Dog walkers
         * Training
+        * To scheledule an appointment
