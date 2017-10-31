@@ -17,13 +17,23 @@ angular
     "$scope",
     "$location",
     "$resource",
-    function($scope, $location, $resource) {}
+    "Products",
+    function($scope, $location, $resource, Products) {
+      function getProducts(){
+        $scope.products = Products.query();
+      }
+      getProducts();
+    }
   ])
   .controller("SingleProductController", [
     "$scope",
     "$location",
     "$resource",
-    function($scope, $location, $resource) {}
+    "$routeParams",
+    "SingleProduct",
+    function($scope, $location, $resource, $routeParams, SingleProduct) {
+      $scope.product = SingleProduct.get({id: $routeParams.id});
+    }
   ])
   .controller("ApplyController", [
     "$scope",
