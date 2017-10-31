@@ -74,10 +74,10 @@ DATABASE SETUP
 
 * STORED PROCEDURES:
   * AllProducts()
-    * Returns id, name, description, price, image, SubcatID, subcategory, CatID, category
+    * Returns id, ProductName, description, price, image, SubcatID, Subcategory, CatID, Category
   * ProductByID(id: number)
-    * Returns id, name, description, price, image, SubcatID, subcategory, CatID, category
+    * Returns id, ProductName, description, price, image, SubcatID, Subcategory, CatID, Category
   * ProductsByCategory(id: number)
-    * Returns id, name, description, price, image, SubcatID, subcategory, CatID, category
+    * Returns id, ProductName, description, price, image, SubcatID, Subcategory, CatID, Category
   * ProductsBySubcategory(id: number)
-    * Returns id, name, description, price, image, SubcatID, subcategory, CatID, category
+    * Returns id, ProductName, description, price, image, SubcatID, Subcategory, CatID, Category
