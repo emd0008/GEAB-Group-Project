@@ -8,7 +8,7 @@
     "start": "npm run build:ts && npm run server",
     "build:ts": "tsc -p .",
     "server": "node server/index.js",
-    "dev": "nodemon -e ts --dir server/ --exec \"npm run build:ts && npm run server\""
+    "dev": "nodemon -e ts --dir server/ --exec 'npm run build:ts && npm run server'"
   },
   "repository": {
     "type": "git",

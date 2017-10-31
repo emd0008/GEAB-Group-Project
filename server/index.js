@@ -17,7 +17,7 @@ app.get("*", (req, res, next) => {
         return next();
     }
     else {
-        res.sendFile(path.join(clientPath, "inde.html"));
+        res.sendFile(path.join(clientPath, "index.html"));
     }
 });
 app.listen(process.env.PORT || 3000);

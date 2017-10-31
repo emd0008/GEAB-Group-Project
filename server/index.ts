@@ -21,7 +21,7 @@ app.get("*", (req, res, next) => {
     if(isAsset(req.url)){
         return next();
     }else{
-        res.sendFile(path.join(clientPath, "inde.html"));
+        res.sendFile(path.join(clientPath, "index.html"));
     }
 })
 
