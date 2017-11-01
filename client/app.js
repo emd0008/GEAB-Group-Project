@@ -1,10 +1,10 @@
 angular.module("MyNewPet", [
     "ngRoute",
     "ngResource",
-    "mnp.controllers",
-    "mnp.factories",
-    "mnp.directives",
-    "mnp.services"
+    "MyNewPet.controllers",
+    "MyNewPet.factories",
+    "MyNewPet.directives",
+    "MyNewPet.services"
 ])
 .config([
     "$locationProvider",
