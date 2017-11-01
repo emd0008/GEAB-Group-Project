@@ -14,7 +14,7 @@ angular.module("MyNewPet", [
         $routeProvider
         .when('/', {
             templateUrl: 'views/welcome.html',
-            controller: 'WelcomeController'
+            controller: ''
         })
         .when('/dogs', {
             templateUrl: 'views/animals.html',

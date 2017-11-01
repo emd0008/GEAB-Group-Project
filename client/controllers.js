@@ -1,11 +1,15 @@
 angular
   .module("MyNewPet.controllers", ["ngRoute"])
-  .controller("WelcomeController", [])
   .controller("AnimalsController", [
     "$scope",
     "$location",
     "$resource",
-    function($scope, $location, $resource) {}
+    "Animals",
+    function($scope, $location, $resource, Animals) {
+      function getAnimals() {
+        $scope.animals = Animals.query();
+      }
+    }
   ])
   .controller("SingleAnimalController", [
     "$scope",
