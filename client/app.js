@@ -14,7 +14,7 @@ angular.module("MyNewPet", [
             $routeProvider
                 .when('/', {
                     templateUrl: 'views/welcome.html',
-                    controller: 'WelcomeController'
+                    controller: ''
                 })
                 .when('/dogs', {
                     templateUrl: 'views/animals.html',
@@ -55,6 +55,10 @@ angular.module("MyNewPet", [
                 .when('/checkout', {
                     templateUrl: 'views/checkout.html',
                     controller: 'CheckoutController'
+                })
+                .when('/payment', {
+                    templateUrl: 'views/payment.html',
+                    controller: 'PaymentController'
                 })
                 .when('/login', {
                     templateUrl: 'views/login.html',
