@@ -4,7 +4,7 @@ angular.module("MyNewPet", [
     "MyNewPet.controllers",
     "MyNewPet.factories",
     "MyNewPet.directives",
-    "MyNewPet.services"
+    // "MyNewPet.services"
 ])
 .config([
     "$locationProvider",
@@ -55,6 +55,10 @@ angular.module("MyNewPet", [
         .when('/checkout', {
             templateUrl: 'views/checkout.html',
             controller: 'CheckoutController'
+        })
+        .when('/payment', {
+            templateUrl: 'views/payment.html',
+            controller: 'PaymentController'
         })
         .when('/login', {
             templateUrl: 'views/login.html',
