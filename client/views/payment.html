@@ -11,33 +11,34 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                    <form role="form" id="payment-form" method="POST">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="card-number">Card Number</label>
-                                    <div class="input">
-                                        <input type="tel" class="form-control" name="card-number" placeholder="Credit Card Number"/>
+                                    <label class="col-md-12 control-label" for="card-number">Card Number</label>
+                                    <div class="col-md-9">
+                                        <input type="tel" class="form-control" name="card-number" id="card-number" placeholder="Credit Card Number" required autofocus/>
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-7">
-                                <div class="form-group">
+                            <div class="col-md-5">
+                                <div class="form-group col-md-9">
                                     <label for="card-Expiry">EXP Date</label>
-                                    <input type="tel" class="form-control" name="card-Expiry" placeholder="MM/YY"/>
+                                    <input type="tel" class="form-control" name="card-Expiry" placeholder="MM/YY" required/>
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <div class="form-group">
+                                <div class="form-group col-md-9">
                                     <label for="card-CVC">CVC</label>
-                                    <input type="tel" class="form-control" name="card-CVC" placeholder="CVC"/>
+                                    <input type="tel" class="form-control" name="card-CVC" placeholder="CVC" required/>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-9">
                                 <button class="pay-now btn btn-success btn-lg btn-block" type="button">Pay Now</button>
                             </div>
                         </div>

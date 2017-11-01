@@ -23,6 +23,16 @@ router.route("/category/:CatID").get((req, res) => {
     });
 });
 
+router.route("/category/:SubCatID").get((req, res) => {
+    procedures.productsBySubCat(req.params.SubCatID)
+    .then(products => {
+        res.send(products);
+    })
+    .catch(err => {
+        res.sendStatus(500);
+    });
+});
+
 router.route("/:id").get((req, res) => {
     procedures.product(req.params.id)
     .then(product => {
