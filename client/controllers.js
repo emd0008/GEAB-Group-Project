@@ -53,6 +53,11 @@ angular
   ])
   .controller("CheckoutController", [
     "$scope",
+    "$resource",
+    function($scope, $resource) {}
+  ])
+  .controller("PaymentController", [
+    "$scope",
     "Payment",
     function($scope, Payment) {
       let elements = stripe.elements();

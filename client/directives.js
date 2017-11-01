@@ -1,4 +1,4 @@
-angular.module('mnp.directives', [])
+angular.module('MyNewPet.directives', [])
 .directive('mainNav', [function() {
 	return {
 		templateUrl: 'directives/navbar.html',
