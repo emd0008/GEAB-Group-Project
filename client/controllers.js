@@ -1,5 +1,5 @@
 angular
-  .module("mnp.controllers", ["ngRoute"])
+  .module("MyNewPet.controllers", ["ngRoute"])
   .controller("WelcomeController", [])
   .controller("AnimalsController", [
     "$scope",
