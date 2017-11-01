@@ -1,6 +1,5 @@
 angular
   .module("MyNewPet.controllers", ["ngRoute"])
-  .controller("WelcomeController", [])
   .controller("AnimalsController", [
     "$scope",
     "$location",
