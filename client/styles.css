@@ -1,61 +1,74 @@
 /* Welcome Page */
 
 body {
-  padding-top: 54px;
+    padding-top: 54px;
 }
 
 @media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
+    body {
+        padding-top: 56px;
+    }
 }
 
 .portfolio-item {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .business-header {
-  height: 50vh;
-  min-height: 300px;
-  background: url("/images/header.jpg") center center no-repeat scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+    height: 50vh;
+    min-height: 300px;
+    background: url("/images/header.jpg") center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
+
 .card {
-  height: 100%;
+    height: 100%;
 }
+
 h1 {
-  font-family: "Lobster", cursive;
+    font-family: "Lobster", cursive;
 }
+
 h2 {
-  font-family: "Lobster", cursive;
+    font-family: "Lobster", cursive;
 }
+
 h3 {
-  font-family: "Lobster", cursive;
+    font-family: "Lobster", cursive;
 }
+
 h4 {
-  font-family: "Lobster", cursive;
+    font-family: "Lobster", cursive;
 }
+
 nav {
-  font-family: "Lobster", cursive;
+    font-family: "Lobster", cursive;
 }
+
 nav {
-  font-family: "Lobster", cursive;
+    font-family: "Lobster", cursive;
 }
+
+
 /* Animal view */
 
 .portfolio-item {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
+
 .pagination {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
+
 
 /* Single Animal view */
 
+
 /* Single Product view */
+
 
 /* Apply view */
 
@@ -83,16 +96,26 @@ nav {
     margin-bottom: 30px;
 }
 
+
 /* Contact view */
 
 #jumboContact {
     background: url("/images/contact.jpg") center center no-repeat scroll;
 }
 
+<<<<<<< HEAD
 /* Services */
+=======
+>>>>>>> a95b8709192b229a9a34c1d690aabe4ff99bdd63
 
 /* Summary view */
 
+
 /* Checkout view */
 
+<<<<<<< HEAD
+
 /* Purchase view */
+=======
+/* Purchase view */
+>>>>>>> 6a8a4519b67a148c39557b18f328f36eef24e36b
