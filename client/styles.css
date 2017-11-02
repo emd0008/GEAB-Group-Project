@@ -77,34 +77,34 @@ nav {
 /* Apply view */
 
 .labels {
-    font-weight: bold;
-    text-align: center;
+  font-weight: bold;
+  text-align: center;
 }
 
 .contact-form {
-    margin-top: 50px;
-    margin-left: 120px;
-    height: 400px;
-    width: 850px;
-    padding-top: 10px;
-    font-size: 2em;
+  margin-top: 1em;
+  margin-left: 120px;
+  height: 400px;
+  width: 850px;
+  font-size: 2em;
+  margin-bottom: 1em;
 }
 
 #jumboApply {
-    background: url("/images/apply.jpg") center center no-repeat;
-    background-size: 1441px 500px;
+  background: url("/images/apply.jpg") center center no-repeat;
+  background-size: 1441px 500px;
 }
 
 #applyBtn {
-    margin-left: 85px;
-    margin-bottom: 30px;
+  margin-left: 85px;
+  margin-bottom: 30px;
 }
 
 
 /* Contact view */
 
 #jumboContact {
-    background: url("/images/contact.jpg") center center no-repeat scroll;
+  background: url("/images/contact.jpg") center center no-repeat scroll;
 }
 
 /* About Us view */
