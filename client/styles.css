@@ -105,6 +105,7 @@ nav {
 
 #jumboContact {
   background: url("/images/contact.jpg") center center no-repeat scroll;
+<<<<<<< HEAD
 }
 
 /* About Us view */
@@ -126,6 +127,8 @@ nav {
 
 .contact {
     padding-bottom: 45px;
+=======
+>>>>>>> 82c63a0f0eb8a3759816751b09c8e6d8e1e9b738
 }
 
 /* Summary view */
