@@ -76,6 +76,10 @@ nav {
 
 /* Apply view */
 
+#dropdownMenuLink {
+    font-family: "Lobster", cursive;
+}
+
 .labels {
   font-weight: bold;
   text-align: center;
