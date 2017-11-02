@@ -16,11 +16,19 @@
                     <a class="nav-link" href="/about">About</a>
                 </li>
                 <li class="nav-item {{ activePage === 'adopt' ? 'active' : ''}}">
-                    <a class="nav-link" href="/apply">Adopt</a>
-                </li>
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Adopt
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item" href="/dogs">Dogs</a>
+                          <a class="dropdown-item" href="/cats">Cats</a>
+                        </div>
+                      </div>                </li>
                 <li class="nav-item">
                     <li class="nav-item {{ activePage === 'services' ? 'active' : ''}}">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link" href="/services">Services</a>
                     </li>
                     <li class="nav-item {{ activePage === 'products' ? 'active' : ''}}">
                         <a class="nav-link" href="/products">Products</a>
