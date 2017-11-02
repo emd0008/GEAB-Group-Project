@@ -23,7 +23,7 @@ angular
     "$resource",
     "Products",
     function($scope, $location, $resource, Products) {
-      function getProducts(){
+      function getProducts() {
         $scope.products = Products.query();
       }
       getProducts();
@@ -36,9 +36,15 @@ angular
     "$routeParams",
     "SingleProduct",
     function($scope, $location, $resource, $routeParams, SingleProduct) {
-      $scope.product = SingleProduct.get({id: $routeParams.id});
+      $scope.product = SingleProduct.get({ id: $routeParams.id });
     }
   ])
+  .controller("SubCatController", ["$scope", "$location", "$routeParams", "Products", function($scope, $location, $resource, $routeParams, SubCategory) {
+    // You'll need the Product(s)  factory pulled in here
+    // this controller is in charge of getting a list of all products with a given subcategory
+    $scope.products=Products.queryBySubcategory({subcategoryid: $routeParams.id});
+  }
+])
   .controller("ApplyController", [
     "$scope",
     "$location",
@@ -47,8 +53,29 @@ angular
   ])
   .controller("ContactController", [
     "$scope",
-    "$resource",
-    function($scope, $resource) {}
+    "ContactForm",
+    "$location",
+    function($scope, ContactForm, $location) {
+      $scope.send = function() {
+        let contact = new ContactForm({
+          from: $scope.from,
+          subject: $scope.subject,
+          message: $scope.message
+        });
+
+        //makes a POST request to /api/contactform with a body with properties from and message
+        contact.$save(
+          function() {
+            alert(
+              "Thank you for your message! We will get back to you shortly."
+            );
+          },
+          function(err) {
+            console.log(err);
+          }
+        );
+      };
+    }
   ])
   .controller("SummaryController", [
     "$scope",
@@ -91,3 +118,6 @@ angular
     }
   ])
   .controller("LoginController", ["$scope", function($scope) {}]);
+
+
+  $scope.products = Products.queryBySubcategory({ subcategoryid: $routeParams.id });  
