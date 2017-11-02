@@ -72,6 +72,12 @@ angular.module("MyNewPet", [
                     templateUrl: 'views/login.html',
                     controller: 'LoginController'
                 })
+                // collar
+                .when('/products/subcategory/:id',{
+                    templateUrl: 'views/multiproduct.html',
+                    controller: 'SubCatController'
+                })
+                
                 .otherwise({
                     redirectTo: '/'
                 });
