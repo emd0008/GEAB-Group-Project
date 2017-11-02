@@ -52,6 +52,10 @@ angular.module("MyNewPet", [
                     templateUrl: 'views/contact.html',
                     controller: 'ContactController'
                 })
+                .when('/cart', {
+                    templateUrl: 'views/cart.html',
+                    controller: ''
+                })
                 .when('/summary', {
                     templateUrl: 'views/summary.html',
                     controller: 'SummaryController'
