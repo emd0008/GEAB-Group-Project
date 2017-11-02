@@ -39,6 +39,12 @@ angular
       $scope.product = SingleProduct.get({ id: $routeParams.id });
     }
   ])
+  .controller("SubCatController", ["$scope", "$location", "$routeParams", "Products", function($scope, $location, $resource, $routeParams, SubCategory) {
+    // You'll need the Product(s)  factory pulled in here
+    // this controller is in charge of getting a list of all products with a given subcategory
+    $scope.products=Products.queryBySubcategory({subcategoryid: $routeParams.id});
+  }
+])
   .controller("ApplyController", [
     "$scope",
     "$location",
@@ -112,3 +118,6 @@ angular
     }
   ])
   .controller("LoginController", ["$scope", function($scope) {}]);
+
+
+  $scope.products = Products.queryBySubcategory({ subcategoryid: $routeParams.id });  
