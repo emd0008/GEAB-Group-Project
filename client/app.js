@@ -60,6 +60,10 @@ angular.module("MyNewPet", [
                     templateUrl: 'views/summary.html',
                     controller: 'SummaryController'
                 })
+                .when('/services', {
+                    templateUrl: 'views/services.html',
+                    controller: ''
+                })
                 .when('/checkout', {
                     templateUrl: 'views/checkout.html',
                     controller: 'CheckoutController'
