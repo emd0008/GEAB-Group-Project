@@ -60,6 +60,26 @@ angular.module("MyNewPet", [
                     templateUrl: 'views/summary.html',
                     controller: 'SummaryController'
                 })
+                .when('/services', {
+                    templateUrl: 'views/services.html',
+                    controller: ''
+                })
+                .when('/vets', {
+                    templateUrl: 'views/vets.html',
+                    controller: ''
+                })
+                .when('/dogwalkers', {
+                    templateUrl: 'views/dogwalkers.html',
+                    controller: ''
+                })
+                .when('/obedience', {
+                    templateUrl: 'views/obedience.html',
+                    controller: ''
+                })
+                .when('/grooming', {
+                    templateUrl: 'views/grooming.html',
+                    controller: ''
+                })
                 .when('/checkout', {
                     templateUrl: 'views/checkout.html',
                     controller: 'CheckoutController'
@@ -72,6 +92,12 @@ angular.module("MyNewPet", [
                     templateUrl: 'views/login.html',
                     controller: 'LoginController'
                 })
+                // collar
+                .when('/products/subcategory/:id',{
+                    templateUrl: 'views/multiproduct.html',
+                    controller: 'SubCatController'
+                })
+                
                 .otherwise({
                     redirectTo: '/'
                 });
