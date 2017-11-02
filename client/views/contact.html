@@ -8,20 +8,33 @@
 <div class="container">
     <form ng-submit="send()" class="contact-form">
         <div class="form-row">
+            <!-- <div class="form-group col-md-6">
+                <label for="Name" class="labels">Name</label>
+                <input type="name" class="form-control" id="Name" placeholder="Name">
+            </div> -->
             <div class="form-group col-md-6">
-              <label for="inputName4" class="labels">Name</label>
-              <input type="name" class="form-control" id="inputName4" placeholder="Name">
+                <label for="Email" class="labels">Email</label>
+                <input type="email" class="form-control" id="Email" ng-model="from" placeholder="Enter your email address">
             </div>
             <div class="form-group col-md-6">
-              <label for="inputEmail4" class="labels">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="Subject" class="labels">Subject</label>
+                <select name="subject" class="form-control" ng-model="subject">
+                    <option selected disabled value="">Select one:</option>
+                    <option value="Adoption">Adoption</option>
+                    <option value="Products">Products</option>
+                    <option value="Veternarians">Veternarians</option>
+                    <option value="Services">Services</option>
+                    <option value="Other">Other</option>
+                </select>
             </div>
         </div>
-    <div class="form-group container bottom" id="contact-message-div">
+
         <label for="message" class="labels">Message</label>
-        <textarea type="text" id="contact-message" class="form-control" rows="3" placeholder="Write here..." ng-model="message"></textarea>
-    </div>
-    <input type="submit" value="SEND" class="btn btn-primary" id="contactBtn"/>
-</form>
+
+        <div class="form-group container bottom" id="contact-message-div">
+            <textarea ng-model="message" type="text" id="Message" class="form-control" rows="3" placeholder="Write here..." ng-model="message"></textarea>
+            <input type="submit" value="SEND" class="btn btn-primary" id="contactBtn" />
+        </div>
+    </form>
 </div>
 <main-footer></main-footer>
