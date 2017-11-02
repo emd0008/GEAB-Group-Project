@@ -32,6 +32,10 @@ angular.module("MyNewPet", [
                     templateUrl: 'views/single_animal.html',
                     controller: 'SingleAnimalController'
                 })
+                .when('/about', {
+                    templateUrl: 'views/about.html',
+                    controller: ''
+                })
                 .when('/products', {
                     templateUrl: 'views/products.html',
                     controller: 'ProductsController'
@@ -47,6 +51,10 @@ angular.module("MyNewPet", [
                 .when('/contact', {
                     templateUrl: 'views/contact.html',
                     controller: 'ContactController'
+                })
+                .when('/cart', {
+                    templateUrl: 'views/cart.html',
+                    controller: ''
                 })
                 .when('/summary', {
                     templateUrl: 'views/summary.html',

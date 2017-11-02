@@ -1,20 +1,23 @@
 <main-nav active-page="'contact'"></main-nav>
 <div class="jumbotron jumbotron-fluid" id="jumboContact">
-    <h1 id="header">Contact Us</h1>
-    <p id="contactP">Let's keep in touch!</p>
-    <img src="https://pixabay.com/photo-1149962/" alt="">
+    <div class="col-lg-12">
+        <h1 class="display-2 text-center text-white mt-4" id="header">Contact Us</h1>
+        <h3 class="display-5 text-center text-black" id="contactP">Let's keep in touch!</h3>
+    </div>
 </div>
 <div class="container">
     <form ng-submit="send()" class="contact-form">
-    <div class="form-group container top">
-        <label for="name" class="labels">Name</label>
-        <input type="text" id="contact-name" class="form-control top" required placeholder="Name">
-    </div>
-    <div class="form-group container">
-        <label for="email" class="labels">Email Address</label>
-        <input type="email" id="contact-email" class="form-control top" required placeholder="Email Address" ng-model="email"/>
-    </div>
-    <div class="form-group container bottom">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputName4" class="labels">Name</label>
+              <input type="name" class="form-control" id="inputName4" placeholder="Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4" class="labels">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+        </div>
+    <div class="form-group container bottom" id="contact-message-div">
         <label for="message" class="labels">Message</label>
         <textarea type="text" id="contact-message" class="form-control" rows="3" placeholder="Write here..." ng-model="message"></textarea>
     </div>
