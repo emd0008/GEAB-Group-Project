@@ -107,6 +107,27 @@ nav {
     background: url("/images/contact.jpg") center center no-repeat scroll;
 }
 
+/* About Us view */
+
+.about-us {
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+/* Vets view */
+
+.vet-heading {
+    padding-bottom: 45px; 
+}
+
+.phone {
+    padding-bottom: 2px;
+}
+
+.contact {
+    padding-bottom: 45px;
+}
+
 /* Summary view */
 
 /* Checkout view */
