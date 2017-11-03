@@ -85,10 +85,10 @@ angular.module("MyNewPet", [
                 //     controller: 'LoginController'
                 // })
                 // collar
-                // .when('/dogs', {
-                //     templateUrl: 'views/animals.html',
-                //     controller: 'AnimalsController'
-                // })
+                .when('/dogs', {
+                    templateUrl: 'views/animals.html',
+                    controller: 'AnimalsController'
+                })
                 // .when('/cats', {
                 //     templateUrl: 'views/animals.html',
                 //     controller: 'AnimalsController'

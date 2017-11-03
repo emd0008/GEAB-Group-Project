@@ -1,22 +1,21 @@
 angular
     .module("MyNewPet.controllers", ["ngRoute"])
-    // .controller("AnimalsController", [
-    //     "$scope",
-    //     "$location",
-    //     "$resource",
-    //     "Animals",
-    //     function($scope, $location, $resource, Animals) {
-    //         function getAnimals() {
-    //             $scope.animals = Animals.query();
-    //         }
-    //     }
-    // ])
-    // .controller("SingleAnimalController", [
-    //     "$scope",
-    //     "$location",
-    //     "$resource",
-    //     function($scope, $location, $resource) {}
-    // ])
+    .controller("AnimalsController", [
+        "$scope",
+        "$location",
+        "$resource",
+        "Animals",
+        function($scope, $location, $resource, Animals) {
+            $scope.animals = Animals.query();
+            console.log($scope.animals);
+        }
+    ])
+    .controller("SingleAnimalController", [
+        "$scope",
+        "$location",
+        "$resource",
+        function($scope, $location, $resource) {}
+    ])
     .controller("ProductsController", [
         "$scope",
         "$location",
