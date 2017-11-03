@@ -12,6 +12,7 @@ function callProcedure(procedureName, args = []) {
     return new Promise(function (resolve, reject) {
         exports.pool.getConnection(function (err, connection) {
             if (err) {
+                console.log(err);
                 reject(err);
             }
             else {
@@ -30,6 +31,7 @@ function callProcedure(procedureName, args = []) {
                 connection.query(callString, args, function (err, resultsets) {
                     connection.release();
                     if (err) {
+                        console.log(err);
                         reject(err);
                     }
                     else {
