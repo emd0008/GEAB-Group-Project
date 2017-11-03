@@ -143,7 +143,11 @@ a.btn.dropdown-toggle {
 }
 
 .phone {
+<<<<<<< HEAD
   padding-bottom: 2px;
+=======
+    padding-bottom: 45px;
+>>>>>>> e320a26a950c238011722f050f0fc69a131d5298
 }
 
 .contact {
