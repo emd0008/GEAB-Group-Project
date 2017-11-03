@@ -1,23 +1,82 @@
 <main-nav active-page="'adopt'"></main-nav>
+<div class="jumbotron jumbotron-fluid" id="jumboDogs">
+    <div class="col-lg-12">
+        <h1 class="display-2 text-center text-white mt-4" id="header">Give Them a Good Home!</h1>
+        <h3 class="display-5 text-center text-black" id="contactP">Which One Will You Choose?</h3>
+    </div>
+</div>
 <div class="container">
       <!-- Page Heading -->
-      <h1 class="my-4">Give them a good home!
-        <small>Which one will you choose?</small>
-      </h1>
+      
+      <div class="row" ng-repeat="animal in animals">
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="/images/Claus.jpg" alt="#"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">{{ animals.name }}</a>
+                  </h4>
+                  <p class="card-text">{{ animals.description }}</p>
+                </div>
+              </div>
+            </div>        
+          </div>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="/:id"><img class="card-img-top" src="us-cdbr-iron-east-05.cleardb.net/client/images/Windy.jpg" alt=""></a>
+            <a href="#"><img class="card-img-top" src="/images/Claus.jpg" alt="#"></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="/:id">{{ dog.name }}</a>
+                <a href="#">Claus</a>
               </h4>
-              <p class="card-text">{{ dog.description }}</p>
+              <p class="card-text">This is a heckin good doggo.</p>
             </div>
           </div>
         </div>        
       </div>
+
+      <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="/images/Rex.jpg" alt="#"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Rex</a>
+                  </h4>
+                  <p class="card-text">This is a heckin good doggo.</p>
+                </div>
+              </div>
+            </div>        
+          </div>
+
+          <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                  <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="/images/Copper.jpg" alt="#"></a>
+                    <div class="card-body">
+                      <h4 class="card-title">
+                        <a href="#">Copper</a>
+                      </h4>
+                      <p class="card-text">This is a heckin good doggo.</p>
+                    </div>
+                  </div>
+                </div>        
+              </div>
+
+              <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="/images/Chelsea.jpg" alt="#"></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#">Chelsea</a>
+                          </h4>
+                          <p class="card-text">This is a heckin good doggo.</p>
+                        </div>
+                      </div>
+                    </div>        
+                  </div> -->
 
       <!-- Pagination -->
       <ul class="pagination justify-content-center">
