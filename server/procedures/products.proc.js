@@ -17,3 +17,7 @@ function productsBySubCat(SubCatID) {
     return db_1.rows("ProductsBySubcategory", [SubCatID]);
 }
 exports.productsBySubCat = productsBySubCat;
+function getAllDogs() {
+    return db_1.rows("GetAllDogs");
+}
+exports.getAllDogs = getAllDogs;

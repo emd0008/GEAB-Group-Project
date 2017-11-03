@@ -9,10 +9,10 @@ angular
     .factory("Products", [
         "$resource",
         function($resource) {
-            return $resource("/api/products/:id", { id: "@id" }, {
+            return $resource("/api/products/", {
                 queryByCategory: {
                     method: "GET",
-                    url: "/api/products/category/:categoryid",
+                    url: "/api/products/",
                     isArray: true
                 },
                 queryBySubcategory: {
@@ -22,4 +22,13 @@ angular
                 }
             });
         }
-    ]);
+    ])
+    .factory("Animals", [
+        "$resource",
+        function($resource) {
+            return $resource("/api/products", {
+                id: "@id"
+            })
+        }
+    ])
+    ;
