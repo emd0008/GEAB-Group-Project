@@ -39,6 +39,7 @@ router.route("/:id").get((req, res) => {
         res.send(product);
     })
     .catch(err => {
+        console.log(err);
         res.sendStatus(500);
     });
 });

@@ -142,12 +142,15 @@ a.btn.dropdown-toggle {
   padding-bottom: 45px;
 }
 
+#jumboVet {
+  background-image: url("/images/vetjumbo.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .phone {
-<<<<<<< HEAD
-  padding-bottom: 2px;
-=======
     padding-bottom: 45px;
->>>>>>> e320a26a950c238011722f050f0fc69a131d5298
 }
 
 .contact {
