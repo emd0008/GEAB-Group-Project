@@ -56,6 +56,17 @@ nav {
     font-family: "Lobster", cursive;
 }
 
+a.btn.dropdown-toggle,
+a.btn.dropdown-toggle:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+a.nav-item,
+a.btn.dropdown-toggle {
+    color: rgba(255, 255, 255, .5);
+}
+
 
 /* Animal view */
 
@@ -67,6 +78,18 @@ nav {
     margin-bottom: 30px;
 }
 
+#jumboDogs {
+    background-image: url("/images/cutegoldens.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+#jumboCats {
+    background: url("/images/kittens.jpg") center center no-repeat;
+}
+
 
 /* Single Animal view */
 
@@ -76,36 +99,41 @@ nav {
 
 /* Apply view */
 
+#dropdownMenuLink {
+    font-family: "Lobster", cursive;
+}
+
 .labels {
-  font-weight: bold;
-  text-align: center;
+    font-weight: bold;
+    text-align: center;
 }
 
 .contact-form {
-  margin-top: 1em;
-  margin-left: 120px;
-  height: 400px;
-  width: 850px;
-  font-size: 2em;
-  margin-bottom: 1em;
+    margin-top: 1em;
+    margin-left: 120px;
+    height: 400px;
+    width: 850px;
+    font-size: 2em;
+    margin-bottom: 1em;
 }
 
 #jumboApply {
-  background: url("/images/apply.jpg") center center no-repeat;
-  background-size: 1441px 500px;
+    background: url("/images/apply.jpg") center center no-repeat;
+    background-size: 1441px 500px;
 }
 
 #applyBtn {
-  margin-left: 85px;
-  margin-bottom: 30px;
+    margin-left: 85px;
+    margin-bottom: 30px;
 }
 
 
 /* Contact view */
 
 #jumboContact {
-  background: url("/images/contact.jpg") center center no-repeat scroll;
+    background: url("/images/contact.jpg") center center no-repeat scroll;
 }
+
 
 /* About Us view */
 
@@ -114,22 +142,33 @@ nav {
     padding-bottom: 15px;
 }
 
+
 /* Vets view */
 
 .vet-heading {
-    padding-bottom: 45px; 
+    padding-bottom: 45px;
+}
+
+#jumboVet {
+  background-image: url("/images/vetjumbo.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .phone {
-    padding-bottom: 2px;
+    padding-bottom: 45px;
 }
 
 .contact {
     padding-bottom: 45px;
 }
 
+
 /* Summary view */
 
+
 /* Checkout view */
+
 
 /* Purchase view */

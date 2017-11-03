@@ -1,21 +1,18 @@
 <main-nav active-page="'singleproduct'"></main-nav>
 
-
-<!-- Page Content -->
 <div class="container">
     <div class="row">
         <div class="col-lg-9">
             <div class="card mt-4">
-                <img class="card-img-top img-fluid" src="/images/bluegreencollar.png" alt="">
+                <img class="card-img-top img-fluid" ng-src="{{ item.imageurl }}">
                 <div class="card-body">
-                    <h3 class="card-title">Product Name</h3>
-                    <h4>$24.99</h4>
-                    <p class="card-text">This thing is friggin awesome!</p>
+                    <h3 class="card-title">{{ product.name }}</h3>
+                    <h4>${{ product.price }}</h4>
+                    <p class="card-text">{{ product.description }}</p>
+                    <button class="btn btn-primary" ng-click="addToCart()">Add To Cart</button>
                 </div>
-                <!-- /.card -->
             </div>
-            <!-- /.col-lg-9 -->
         </div>
     </div>
-    <!-- /.container -->
-    <main-footer></main-footer>
+
+    <main-footer class="fixed-bottom"></main-footer>

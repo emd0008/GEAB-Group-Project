@@ -15,3 +15,7 @@ export function productsByCat(CatID: number): Promise<Array<models.IProduct>>{
 export function productsBySubCat(SubCatID: number): Promise<Array<models.IProduct>>{
     return rows("ProductsBySubcategory", [SubCatID]);
 }
+
+export function getAllDogs(): Promise<Array<models.IProduct>> {
+    return rows("GetAllDogs");
+}
