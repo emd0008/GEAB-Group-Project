@@ -5,16 +5,20 @@ angular
     "$location",
     "$resource",
     "Animals",
-    function($scope, $location, $resource, Animals) {
+    "Products",
+    function($scope, $location, $resource, Animals, Products) {
       function getAnimals() {
-        $scope.animals = Animals.query();
+        // $scope.animals = Products.query();
+        // $scope.animals = Products.queryBySubcategory();
       }
+      getAnimals();
     }
   ])
   .controller("SingleAnimalController", [
     "$scope",
     "$location",
     "$resource",
+    "Animals",
     function($scope, $location, $resource) {}
   ])
   .controller("ProductsController", [
@@ -119,5 +123,5 @@ angular
   ])
   .controller("LoginController", ["$scope", function($scope) {}]);
 
-
-  $scope.products = Products.queryBySubcategory({ subcategoryid: $routeParams.id });  
+  // $scope.animals = Animals.queryBySubcategory({ subcategoryid: $routeParams.id });
+  // $scope.products = Products.queryBySubcategory({ subcategoryid: $routeParams.id });  

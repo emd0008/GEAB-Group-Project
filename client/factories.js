@@ -20,7 +20,23 @@ angular
           },
           queryBySubcategory: {
             method: "GET",
-            url: "/api/products/subcategory/:subcategoryid",
+            url: "/api/products/",
+            isArray: true
+          }
+        }
+      );
+    }
+  ])
+  .factory("Animals", [
+    "$resource",
+    function($resource) {
+      return $resource(
+        "/api/animals/:id",
+        { id: "@id " },
+        {
+          queryBySubcategory: {
+            method: "GET",
+            url: "/api/animals/subcategory/:subcategoryid",
             isArray: true
           }
         }
