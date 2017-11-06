@@ -48,6 +48,10 @@ a.btn.dropdown-toggle {
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* .container {
+  background-color: rgb(25, 71, 131);
+} */
+
 /* Animal view */
 
 .portfolio-item {
@@ -68,6 +72,26 @@ a.btn.dropdown-toggle {
 
 #jumboCats {
   background: url("/images/kittens.jpg") center center no-repeat;
+}
+
+/* Dog Walker/Sitter view */
+
+#jumboWalk {
+  background-image: url("/images/dogwalker.jpg");
+  background-position: center 23%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+/* Multi-Product view */
+
+#jumboProduct {
+  background-image: url("images/petshopping.jpg");
+  background-position: center 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%
 }
 
 /* Single Animal view */
