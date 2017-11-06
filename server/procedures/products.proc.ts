@@ -1,15 +1,7 @@
 import {row, rows} from "../config/db";
 
-export function getDogToys(): Promise<Array<models.IProduct>>{
-    return rows("GetAllDogToys");
-}
-
-export function getAllDogs(): Promise<Array<models.IProduct>> {
-    return rows("GetAllDogs");
-}
-
-export function getAllCats(): Promise<Array<models.IProduct>>{
-    return row("GetAllCats");
+export function read(id: number): Promise<Array<models.IProduct>>{
+    return row("ProductByID", [id]);
 }
 
 export function productsByCat(CatID: number): Promise<Array<models.IProduct>>{

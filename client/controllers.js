@@ -14,7 +14,7 @@ angular
         url: $location.url(),
         description: "Homeward Bound Pet Adoption"
       });
-      $scope.animals = Products.queryBySubcategory({
+      $scope.products = Products.queryBySubcategory({
         SubCatId: $routeParams.subcategoryid
       });
       console.log($scope.animals);
@@ -63,21 +63,21 @@ angular
         description: "Shop Homeward Bound"
       });
       $scope.products = Products.queryBySubcategory({
-        id: $routeParams.id
+        SubCatId: $routeParams.subcategoryid
       });
       console.log($scope.products);
     }
   ])
-  // .controller("SingleProductController", [
-  //     "$scope",
-  //     "$location",
-  //     "$resource",
-  //     "$routeParams",
-  //     "Products",
-  //     function($scope, $location, $resource, $routeParams, Products) {
-  //         $scope.product = Products.get({ id: $routeParams.id });
-  //     }
-  // ])
+  .controller("SingleProductController", [
+    "$scope",
+    "$location",
+    "$resource",
+    "$routeParams",
+    "Products",
+    function($scope, $location, $resource, $routeParams, Products) {
+      $scope.product = Products.get({ id: $routeParams.id });
+    }
+  ])
   // .controller("SubCatController", ["$scope", "$location", "$routeParams", "Products", function($scope, $location, $resource, $routeParams, SubCategory) {
   //     // You'll need the Product(s)  factory pulled in here
   //     // this controller is in charge of getting a list of all products with a given subcategory
@@ -135,8 +135,9 @@ angular
   .controller("PaymentController", [
     "SEOService",
     "$scope",
+    "$location",
     "Payment",
-    function(SEOService, $scope, Payment) {
+    function(SEOService, $scope, $location, Payment) {
       SEOService.setSEO({
         title: "Checkout",
         image: "http://" + $location.host() + "/images/dog-shopping.jpg",
@@ -145,9 +146,9 @@ angular
       });
       let elements = stripe.elements();
       let card = elements.create("card");
-      card.mount("#card-number");
+      card.mount("#card-field");
       $scope.process = function() {
-        stripe.createToken(card).then(function(result) {
+        stripe.createToken(card).then(result => {
           if (result.error) {
             $scope.error = result.error.message;
           } else {
