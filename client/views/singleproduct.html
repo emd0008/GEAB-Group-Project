@@ -1,5 +1,6 @@
 <main-nav active-page="'singleproduct'"></main-nav>
 
+
 <div class="container jumbotron">
     <div class="row">
         <div class="col-lg-9">
@@ -7,7 +8,7 @@
                 <img class="card-img-top img-fluid" ng-src="{{ product.image  }}">
                 <div class="card-body">
                     <h3 class="card-title">{{ product.name }}</h3>
-                    <h4>${{ product.price }}</h4>
+                    <h4>{{ product.price | currency }}</h4>
                     <p class="card-text">{{ product.description }}</p>
                     <button class="btn btn-primary" ng-click="addToCart()">Add To Cart</button>
                 </div>
@@ -16,4 +17,4 @@
     </div>
 </div>
 
-    <main-footer class="fixed-bottom"></main-footer>
+<main-footer></main-footer>
