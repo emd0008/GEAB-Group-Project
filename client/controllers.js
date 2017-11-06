@@ -1,16 +1,12 @@
 angular
   .module("MyNewPet.controllers", ["ngRoute"])
   .controller("AnimalsController", [
-<<<<<<< HEAD
     "SEOService",
-=======
->>>>>>> 447a8107e09a4555a0ac23f3040cc6d4f5827571
     "$scope",
     "$location",
     "$resource",
     "Products",
     "$routeParams",
-<<<<<<< HEAD
     function(SEOService, $scope, $location, $resource, Products, $routeParams) {
       SEOService.setSEO({
         title: "Homeward Bound Pet Adoption",
@@ -20,11 +16,6 @@ angular
       });
       $scope.animals = Products.queryBySubcategory({
         SubCatId: $routeParams.subcategoryid
-=======
-    function($scope, $location, $resource, Products, $routeParams) {
-      $scope.animals = Products.queryBySubcategory({
-        SubCatId: $routeParams.subcategoryid
->>>>>>> 447a8107e09a4555a0ac23f3040cc6d4f5827571
       });
       console.log($scope.animals);
     }
