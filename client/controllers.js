@@ -1,30 +1,14 @@
 angular
   .module("MyNewPet.controllers", ["ngRoute"])
   .controller("AnimalsController", [
-<<<<<<< HEAD
-    "SEOService",
-=======
->>>>>>> 447a8107e09a4555a0ac23f3040cc6d4f5827571
     "$scope",
     "$location",
     "$resource",
     "Products",
     "$routeParams",
-<<<<<<< HEAD
-    function(SEOService, $scope, $location, $resource, Products, $routeParams) {
-      SEOService.setSEO({
-        title: "Homeward Bound Pet Adoption",
-        image: "http://" + $location.host() + "/images/cutegoldens.jpg",
-        url: $location.url(),
-        description: "Homeward Bound Pet Adoption"
-      });
-      $scope.animals = Products.queryBySubcategory({
-        SubCatId: $routeParams.subcategoryid
-=======
     function($scope, $location, $resource, Products, $routeParams) {
       $scope.animals = Products.queryBySubcategory({
         SubCatId: $routeParams.subcategoryid
->>>>>>> 447a8107e09a4555a0ac23f3040cc6d4f5827571
       });
       console.log($scope.animals);
     }
@@ -77,27 +61,21 @@ angular
       console.log($scope.products);
     }
   ])
-  // .controller("SingleProductController", [
-  //     "$scope",
-  //     "$location",
-  //     "$resource",
-  //     "$routeParams",
-  //     "Products",
-  //     function($scope, $location, $resource, $routeParams, Products) {
-  //         $scope.product = Products.get({ id: $routeParams.id });
-  //     }
-  // ])
+  .controller("SingleProductController", [
+      "$scope",
+      "$location",
+      "$resource",
+      "$routeParams",
+      "Products",
+      function($scope, $location, $resource, $routeParams, Products) {
+          $scope.product = Products.get({ id: $routeParams.id });
+      }
+  ])
   // .controller("SubCatController", ["$scope", "$location", "$routeParams", "Products", function($scope, $location, $resource, $routeParams, SubCategory) {
   //     // You'll need the Product(s)  factory pulled in here
   //     // this controller is in charge of getting a list of all products with a given subcategory
   //     $scope.products = Products.queryBySubcategory({ subcategoryid: $routeParams.id });
   // }])
-  // .controller("ApplyController", [
-  //     "$scope",
-  //     "$location",
-  //     "$resource",
-  //     function($scope, $location, $resource) {}
-  // ])
   .controller("ContactController", [
     "SEOService",
     "$scope",
