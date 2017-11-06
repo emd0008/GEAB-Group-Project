@@ -76,16 +76,13 @@ angular
     "$routeParams",
     "Products",
     function(SEOService, $scope, $location, $resource, $routeParams, Products) {
-      $scope.product = Products.get({ id: $routeParams.id }, function(
-        success
-      ) {});
-
-      console.log($scope.product.ProductName);
-      SEOService.setSEO({
-        // title: ProductName
-        // image: $scope.product.image,
-        // url: $location.url(),
-        // description: $scope.product.description
+      $scope.product = Products.get({ id: $routeParams.id }, function(success) {
+        SEOService.setSEO({
+          title: $scope.product.ProductName,
+          image: $scope.product.image,
+          url: $location.url(),
+          description: $scope.product.description
+        });
       });
     }
   ])
