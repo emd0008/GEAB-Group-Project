@@ -11,12 +11,12 @@
       <div class="row" ng-repeat="animal in animals">
             <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="/images/Claus.jpg" alt="#"></a>
+                <a href="#"><img class="card-img-top" src="{{ animal.image }}" alt="#"></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">{{ animals.name }}</a>
+                    <a href="#">{{ animal.name }}</a>
                   </h4>
-                  <p class="card-text">{{ animals.description }}</p>
+                  <p class="card-text">{{ animal.description }}</p>
                 </div>
               </div>
             </div>        

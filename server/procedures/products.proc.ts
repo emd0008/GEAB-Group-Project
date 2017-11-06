@@ -1,11 +1,15 @@
 import {row, rows} from "../config/db";
 
-export function all(): Promise<Array<models.IProduct>>{
-    return rows("AllProducts");
+export function getDogToys(): Promise<Array<models.IProduct>>{
+    return rows("GetAllDogToys");
 }
 
-export function product(id: number): Promise<Array<models.IProduct>>{
-    return row("ProductByID", [id]);
+export function getAllDogs(): Promise<Array<models.IProduct>> {
+    return rows("GetAllDogs");
+}
+
+export function getAllCats(): Promise<Array<models.IProduct>>{
+    return row("GetAllCats");
 }
 
 export function productsByCat(CatID: number): Promise<Array<models.IProduct>>{
@@ -16,6 +20,3 @@ export function productsBySubCat(SubCatID: number): Promise<Array<models.IProduc
     return rows("ProductsBySubcategory", [SubCatID]);
 }
 
-export function getAllDogs(): Promise<Array<models.IProduct>> {
-    return rows("GetAllDogs");
-}
