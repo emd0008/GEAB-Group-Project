@@ -1,5 +1,5 @@
-import * as express from "express";
-import * as procedures from "../procedures/products.proc";
+import * as express from 'express';
+import * as procedures from '../procedures/products.proc';
 
 let router = express.Router();
 
