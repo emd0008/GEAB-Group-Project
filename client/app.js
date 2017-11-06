@@ -4,8 +4,8 @@ angular
     "ngResource",
     "MyNewPet.controllers",
     "MyNewPet.factories",
-    "MyNewPet.directives"
-    // "MyNewPet.services"
+    "MyNewPet.directives",
+    "MyNewPet.services"
   ])
   .config([
     "$locationProvider",
@@ -15,7 +15,7 @@ angular
       $routeProvider
         .when("/", {
           templateUrl: "views/welcome.html",
-          controller: ""
+          controller: "HomeController"
         })
         .when("/about", {
           templateUrl: "views/about.html",
@@ -38,8 +38,8 @@ angular
           controller: "ProductsController"
         })
         .when("/animals/subcategory/:subcategoryid", {
-            templateUrl: "views/animals.html",
-            controller: "AnimalsController"
+          templateUrl: "views/animals.html",
+          controller: "AnimalsController"
         })
         .when("/products/:id", {
           templateUrl: "views/singleproduct.html",

@@ -1,31 +1,76 @@
 angular
   .module("MyNewPet.controllers", ["ngRoute"])
   .controller("AnimalsController", [
+<<<<<<< HEAD
+    "SEOService",
+=======
+>>>>>>> 447a8107e09a4555a0ac23f3040cc6d4f5827571
     "$scope",
     "$location",
     "$resource",
     "Products",
     "$routeParams",
+<<<<<<< HEAD
+    function(SEOService, $scope, $location, $resource, Products, $routeParams) {
+      SEOService.setSEO({
+        title: "Homeward Bound Pet Adoption",
+        image: "http://" + $location.host() + "/images/cutegoldens.jpg",
+        url: $location.url(),
+        description: "Homeward Bound Pet Adoption"
+      });
+      $scope.animals = Products.queryBySubcategory({
+        SubCatId: $routeParams.subcategoryid
+=======
     function($scope, $location, $resource, Products, $routeParams) {
       $scope.animals = Products.queryBySubcategory({
         SubCatId: $routeParams.subcategoryid
+>>>>>>> 447a8107e09a4555a0ac23f3040cc6d4f5827571
       });
       console.log($scope.animals);
     }
   ])
-  .controller("SingleAnimalController", [
+  .controller("HomeController", [
+    "SEOService",
     "$scope",
     "$location",
     "$resource",
-    function($scope, $location, $resource) {}
+    function(SEOService, $scope, $location, $resource) {
+      SEOService.setSEO({
+        title: "Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Homeward Bound"
+      });
+    }
+  ])
+  .controller("SingleAnimalController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    function(SEOService, $scope, $location, $resource) {
+      SEOService.setSEO({
+        title: "Shop Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Shop Homeward Bound"
+      });
+    }
   ])
   .controller("ProductsController", [
+    "SEOService",
     "$scope",
     "$location",
     "$resource",
     "Products",
     "$routeParams",
-    function($scope, $location, $resource, Products, $routeParams) {
+    function(SEOService, $scope, $location, $resource, Products, $routeParams) {
+      SEOService.setSEO({
+        title: "Shop Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Shop Homeward Bound"
+      });
       $scope.products = Products.queryBySubcategory({
         id: $routeParams.id
       });
@@ -54,10 +99,17 @@ angular
   //     function($scope, $location, $resource) {}
   // ])
   .controller("ContactController", [
+    "SEOService",
     "$scope",
     "ContactForm",
     "$location",
-    function($scope, ContactForm, $location) {
+    function(SEOService, $scope, ContactForm, $location) {
+      SEOService.setSEO({
+        title: "Contact Us",
+        image: "http://" + $location.host() + "/images/dog-writing.jpg",
+        url: $location.url(),
+        description: "Contact Homeward Bound"
+      });
       $scope.send = function() {
         let contact = new ContactForm({
           from: $scope.from,
@@ -90,9 +142,16 @@ angular
   //     function($scope, $resource) {}
   // ])
   .controller("PaymentController", [
+    "SEOService",
     "$scope",
     "Payment",
-    function($scope, Payment) {
+    function(SEOService, $scope, Payment) {
+      SEOService.setSEO({
+        title: "Checkout",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Homeward Bound Checkout"
+      });
       let elements = stripe.elements();
       let card = elements.create("card");
       card.mount("#card-number");
