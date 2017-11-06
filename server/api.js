@@ -9,5 +9,5 @@ router
     .use("/products", products_ctrl_1.default)
     .use("/contactform", contact_ctrl_1.default)
     .use("/payment", payment_ctrl_1.default);
-use();
+//.use("/users", users);
 exports.default = router;
