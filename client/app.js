@@ -29,10 +29,6 @@ angular
           templateUrl: "views/products.html",
           controller: "ProductsController"
         })
-        // .when("/products/dogtoys", {
-        //   templateUrl: "views/multiproduct.html",
-        //   controller: "ProductsController"
-        // })
         .when("/products/subcategory/:subcategoryid", {
           templateUrl: "views/multiproduct.html",
           controller: "ProductsController"

@@ -11,5 +11,5 @@ router.get('/', (req, res) => {
     
         res.status(500).send(err);
     });
-    });
-    export default router;
+});
+export default router;
