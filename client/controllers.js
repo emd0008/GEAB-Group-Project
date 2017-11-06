@@ -63,7 +63,7 @@ angular
                 description: "Shop Homeward Bound"
             });
             $scope.products = Products.queryBySubcategory({
-                id: $routeParams.id
+                SubCatId: $routeParams.subcategoryid
             });
             console.log($scope.products);
         }
