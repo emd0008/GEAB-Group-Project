@@ -77,6 +77,7 @@ angular
           templateUrl: "views/payment.html",
           controller: "PaymentController"
         })
+<<<<<<< HEAD
         //.when('/multiproduct', {
         //     templateUrl: 'views/multiproduct.html',
         //     controller: ''
@@ -85,6 +86,12 @@ angular
         //     templateUrl: 'views/summary.html',
         //     controller: 'SummaryController'
         // })
+=======
+        .when('/summary', {
+            templateUrl: 'views/summary.html',
+            controller: 'SummaryController'
+        })
+>>>>>>> 1ed6e149b8681d8127c95d52b1ca4eac47e08275
         .when('/login', {
             templateUrl: 'views/login.html',
             controller: 'LoginController'
@@ -93,18 +100,6 @@ angular
           templateUrl: "views/animals.html",
           controller: "AnimalsController"
         })
-        // .when('/cats', {
-        //     templateUrl: 'views/animals.html',
-        //     controller: 'AnimalsController'
-        // })
-        // .when('/dogs/:id', {
-        //     templateUrl: 'views/single_animal.html',
-        //     controller: 'SingleAnimalController'
-        // })
-        // .when('/cats/:id', {
-        //     templateUrl: 'views/single_animal.html',
-        //     controller: 'SingleAnimalController'
-        // })
         .otherwise({
           redirectTo: "/"
         });
