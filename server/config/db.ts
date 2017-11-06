@@ -13,6 +13,7 @@ Promise<Array<Array<any>>>{
     return new Promise(function(resolve, reject){
         pool.getConnection(function(err, connection){
             if(err){
+                console.log(err);
                 reject(err);
             }else{
                 let placeholders = "";
@@ -29,6 +30,7 @@ Promise<Array<Array<any>>>{
                 connection.query(callString, args, function(err, resultsets){
                     connection.release();
                     if(err){
+                        console.log(err);
                         reject(err);
                     }else{
                         resolve(resultsets);

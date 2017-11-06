@@ -28,30 +28,11 @@ body {
   height: 100%;
 }
 
-h1 {
-  font-family: "Lobster", cursive;
-}
-
-h2 {
-  font-family: "Lobster", cursive;
-}
-
-h3 {
-  font-family: "Lobster", cursive;
-}
-
-h4 {
-  font-family: "Lobster", cursive;
-}
-
-h5 {
-  font-family: "Lobster", cursive;
-}
-
-nav {
-  font-family: "Lobster", cursive;
-}
-
+h1,
+h2,
+h3,
+h4,
+h5,
 nav {
   font-family: "Lobster", cursive;
 }
@@ -64,7 +45,7 @@ a.btn.dropdown-toggle:focus {
 
 a.nav-item,
 a.btn.dropdown-toggle {
-    color: rgba(255, 255, 255,.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* Animal view */
@@ -142,12 +123,15 @@ a.btn.dropdown-toggle {
   padding-bottom: 45px;
 }
 
+#jumboVet {
+  background-image: url("/images/vetjumbo.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .phone {
-<<<<<<< HEAD
-  padding-bottom: 2px;
-=======
-    padding-bottom: 45px;
->>>>>>> e320a26a950c238011722f050f0fc69a131d5298
+  padding-bottom: 45px;
 }
 
 .contact {
@@ -159,5 +143,3 @@ a.btn.dropdown-toggle {
 /* Checkout view */
 
 /* Purchase view */
-
-
