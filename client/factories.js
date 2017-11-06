@@ -5,6 +5,9 @@ angular.module("MyNewPet.factories", [])
     return $resource("/api/contactform/:id", { id: "@id" });
   }
 ])
+.factory("Payment", ["$resource", function($resource){
+  return $resource("/api/payment/");
+}])
 .factory("Products", ["$resource", function($resource) {
   return $resource("/api/products/:id",{ id: "@id" },
     { queryBySubcategory: {
