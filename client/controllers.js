@@ -135,8 +135,9 @@ angular
     .controller("PaymentController", [
         "SEOService",
         "$scope",
+        "$location",
         "Payment",
-        function(SEOService, $scope, Payment) {
+        function(SEOService, $scope, $location, Payment) {
             SEOService.setSEO({
                 title: "Checkout",
                 image: "http://" + $location.host() + "/images/dog-shopping.jpg",
@@ -145,7 +146,7 @@ angular
             });
             let elements = stripe.elements();
             let card = elements.create("card");
-            card.mount("#card-number");
+            card.mount("#card-field");
             $scope.process = function() {
                 stripe.createToken(card).then(result => {
                     if (result.error) {
