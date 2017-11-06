@@ -77,21 +77,10 @@ angular
           templateUrl: "views/payment.html",
           controller: "PaymentController"
         })
-<<<<<<< HEAD
-        //.when('/multiproduct', {
-        //     templateUrl: 'views/multiproduct.html',
-        //     controller: ''
-        // })
-        // .when('/summary', {
-        //     templateUrl: 'views/summary.html',
-        //     controller: 'SummaryController'
-        // })
-=======
         .when('/summary', {
             templateUrl: 'views/summary.html',
             controller: 'SummaryController'
         })
->>>>>>> 1ed6e149b8681d8127c95d52b1ca4eac47e08275
         .when('/login', {
             templateUrl: 'views/login.html',
             controller: 'LoginController'
