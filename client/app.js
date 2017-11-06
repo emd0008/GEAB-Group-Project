@@ -85,11 +85,10 @@ angular
         //     templateUrl: 'views/summary.html',
         //     controller: 'SummaryController'
         // })
-        // .when('/login', {
-        //     templateUrl: 'views/login.html',
-        //     controller: 'LoginController'
-        // })
-        // collar
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'LoginController'
+        })
         .when("/dogs", {
           templateUrl: "views/animals.html",
           controller: "AnimalsController"
