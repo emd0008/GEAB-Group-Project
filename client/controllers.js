@@ -147,7 +147,7 @@ angular
       let card = elements.create("card");
       card.mount("#card-number");
       $scope.process = function() {
-        stripe.createToken(card).then(result => {
+        stripe.createToken(card).then(function(result) {
           if (result.error) {
             $scope.error = result.error.message;
           } else {
