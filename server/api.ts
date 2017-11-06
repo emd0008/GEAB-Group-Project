@@ -9,6 +9,6 @@ router
   .use("/products", products)
   .use("/contactform", contact)
   .use("/payment", payment)
-  .use("/users", users);
+  //.use("/users", users);
 
 export default router;

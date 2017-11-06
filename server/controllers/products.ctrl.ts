@@ -3,16 +3,16 @@ import * as procedures from '../procedures/products.proc';
 
 let router = express.Router();
 
-router.get("/", (req,res) => {
-    procedures.getAllDogs()
-    .then(dogs => {
-        res.send(dogs);
-    })
-    .catch(err => {
-        console.log(err);
-        res.sendStatus(500);
-    });
-});
+// router.get("/", (req,res) => {
+//     procedures.getAllDogs()
+//     .then(dogs => {
+//         res.send(dogs);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.sendStatus(500);
+//     });
+// });
 
 // router.route("/category/:CatID").get((req, res) => {
 //     procedures.productsByCat(req.params.CatID)
