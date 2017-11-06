@@ -70,6 +70,17 @@ a.btn.dropdown-toggle {
   background: url("/images/kittens.jpg") center center no-repeat;
 }
 
+/* Dog Walker/Sitter view */
+
+#jumboWalk {
+  background-image: url("/images/dogwalker.jpg");
+  background-position: center 23%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
+}
+
 /* Single Animal view */
 
 /* Single Product view */
