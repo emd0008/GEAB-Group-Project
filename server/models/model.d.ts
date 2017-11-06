@@ -26,4 +26,8 @@ declare namespace models{
         CatID: number;
         category: string;
     }
+    interface IUser {
+        id: number;
+        email: string;
+    }
 }
