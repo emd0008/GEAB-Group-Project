@@ -5,6 +5,9 @@ import payment from "./controllers/payment.ctrl"
 
 const router = express.Router();
 
-router.use("/products", products).use("/contactform", contact).use("/payment", payment);
+router
+.use("/products", products)
+.use("/contactform", contact)
+.use("/payment", payment);
 
 export default router;
