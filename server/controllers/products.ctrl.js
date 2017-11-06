@@ -13,8 +13,8 @@ router.get("/", (req, res) => {
         res.sendStatus(500);
     });
 });
-// router.route("/").get((req, res) => {
-//     procedures.all()
+// router.route("/category/:CatID").get((req, res) => {
+//     procedures.productsByCat(req.params.CatID)
 //     .then(products => {
 //         res.send(products);
 //     })
@@ -22,15 +22,6 @@ router.get("/", (req, res) => {
 //         res.sendStatus(500);
 //     });
 // });
-router.route("/category/:CatID").get((req, res) => {
-    procedures.productsByCat(req.params.CatID)
-        .then(products => {
-        res.send(products);
-    })
-        .catch(err => {
-        res.sendStatus(500);
-    });
-});
 router.route("/subcategory/:SubCatID").get((req, res) => {
     procedures.productsBySubCat(req.params.SubCatID)
         .then(products => {
@@ -40,14 +31,14 @@ router.route("/subcategory/:SubCatID").get((req, res) => {
         res.sendStatus(500);
     });
 });
-router.route("/:id").get((req, res) => {
-    procedures.product(req.params.id)
-        .then(product => {
-        res.send(product);
-    })
-        .catch(err => {
-        console.log(err);
-        res.sendStatus(500);
-    });
-});
+// router.route("/:id").get((req, res) => {
+//     procedures.product(req.params.id)
+//     .then(product => {
+//         res.send(product);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.sendStatus(500);
+//     });
+// });
 exports.default = router;

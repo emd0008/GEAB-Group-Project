@@ -14,16 +14,6 @@ router.get("/", (req,res) => {
     });
 });
 
-// router.route("/").get((req, res) => {
-//     procedures.all()
-//     .then(products => {
-//         res.send(products);
-//     })
-//     .catch(err => {
-//         res.sendStatus(500);
-//     });
-// });
-
 // router.route("/category/:CatID").get((req, res) => {
 //     procedures.productsByCat(req.params.CatID)
 //     .then(products => {
@@ -34,15 +24,15 @@ router.get("/", (req,res) => {
 //     });
 // });
 
-// router.route("/subcategory/:SubCatID").get((req, res) => {
-//     procedures.productsBySubCat(req.params.SubCatID)
-//     .then(products => {
-//         res.send(products);
-//     })
-//     .catch(err => {
-//         res.sendStatus(500);
-//     });
-// });
+router.route("/subcategory/:SubCatID").get((req, res) => {
+    procedures.productsBySubCat(req.params.SubCatID)
+    .then(products => {
+        res.send(products);
+    })
+    .catch(err => {
+        res.sendStatus(500);
+    });
+});
 
 // router.route("/:id").get((req, res) => {
 //     procedures.product(req.params.id)
