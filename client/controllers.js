@@ -14,7 +14,7 @@ angular
                 url: $location.url(),
                 description: "Homeward Bound Pet Adoption"
             });
-            $scope.animals = Products.queryBySubcategory({
+            $scope.products = Products.queryBySubcategory({
                 SubCatId: $routeParams.subcategoryid
             });
             console.log($scope.animals);

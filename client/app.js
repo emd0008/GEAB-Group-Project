@@ -77,35 +77,18 @@ angular
           templateUrl: "views/payment.html",
           controller: "PaymentController"
         })
-        //.when('/multiproduct', {
-        //     templateUrl: 'views/multiproduct.html',
-        //     controller: ''
-        // })
-        // .when('/summary', {
-        //     templateUrl: 'views/summary.html',
-        //     controller: 'SummaryController'
-        // })
-        // .when('/login', {
-        //     templateUrl: 'views/login.html',
-        //     controller: 'LoginController'
-        // })
-        // collar
+        .when('/summary', {
+            templateUrl: 'views/summary.html',
+            controller: 'SummaryController'
+        })
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'LoginController'
+        })
         .when("/dogs", {
           templateUrl: "views/animals.html",
           controller: "AnimalsController"
         })
-        // .when('/cats', {
-        //     templateUrl: 'views/animals.html',
-        //     controller: 'AnimalsController'
-        // })
-        // .when('/dogs/:id', {
-        //     templateUrl: 'views/single_animal.html',
-        //     controller: 'SingleAnimalController'
-        // })
-        // .when('/cats/:id', {
-        //     templateUrl: 'views/single_animal.html',
-        //     controller: 'SingleAnimalController'
-        // })
         .otherwise({
           redirectTo: "/"
         });
