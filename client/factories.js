@@ -10,25 +10,25 @@ angular
     "$resource",
     function($resource) {
       return $resource(
-        "/api/products/subcategory/:subcategoryid",
+        "/api/products/:id",
         {
           id: "@id"
         },
         {
           queryBySubcategory: {
             method: "GET",
-            url: "/api/products/subcategory/:subcategoryid",
+            url: "/api/products/subcategory/:SubCatId",
             isArray: true
           }
         }
       );
     }
-  ])
+  ]);
 //   .factory("Animals", [
 //     "$resource",
 //     function($resource) {
 //       return $resource(
-//           "/api/products/subcategory/:subcategoryid", 
+//           "/api/products/subcategory/:subcategoryid",
 //           {
 //         id: "@id"
 //       }, {
@@ -41,4 +41,3 @@ angular
 //     );
 //     }
 //   ])
-;
