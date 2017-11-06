@@ -8,6 +8,7 @@ const router = express.Router();
 router
   .use("/products", products)
   .use("/contactform", contact)
-  .use("/payment", payment);
+  .use("/payment", payment)
+  .use("/users", users);
 
 export default router;
