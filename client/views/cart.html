@@ -1,6 +1,6 @@
 <main-nav active-page="cart"></main-nav>
 
-<div class="container">
+<div class="container jumbotron">
     <div class="row">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
             <table class="table table-hover">
@@ -17,9 +17,12 @@
                     <tr>
                         <td class="col-sm-8 col-md-6">
                             <div class="media">
-                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="/images/angeldress.png" style="width: 72px; height: 72px;"> </a>
+                                <a class="thumbnail pull-left" href="#">
+                                    <img class="media-object" src="/images/angeldress.png" style="width: 72px; height: 72px;"> </a>
                                 <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
+                                    <h4 class="media-heading">
+                                        <a href="#">Product name</a>
+                                    </h4>
 
 
                                 </div>
@@ -28,19 +31,27 @@
                         <td class="col-sm-1 col-md-1" style="text-align: center">
                             <input type="email" class="form-control" id="exampleInputEmail1" value="3">
                         </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$4.87</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center">
+                            <strong>$4.87</strong>
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center">
+                            <strong>$14.61</strong>
+                        </td>
                         <td class="col-sm-1 col-md-1">
                             <button type="button" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-remove"></span> Remove
-                            </button></td>
+                            </button>
+                        </td>
                     </tr>
                     <tr>
                         <td class="col-md-6">
                             <div class="media">
-                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="/images/leash-retractable-black.png" style="width: 72px; height: 72px;"> </a>
+                                <a class="thumbnail pull-left" href="#">
+                                    <img class="media-object" src="/images/leash-retractable-black.png" style="width: 72px; height: 72px;"> </a>
                                 <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
+                                    <h4 class="media-heading">
+                                        <a href="#">Product name</a>
+                                    </h4>
 
 
                                 </div>
@@ -49,12 +60,17 @@
                         <td class="col-md-1" style="text-align: center">
                             <input type="email" class="form-control" id="exampleInputEmail1" value="2">
                         </td>
-                        <td class="col-md-1 text-center"><strong>$4.99</strong></td>
-                        <td class="col-md-1 text-center"><strong>$9.98</strong></td>
+                        <td class="col-md-1 text-center">
+                            <strong>$4.99</strong>
+                        </td>
+                        <td class="col-md-1 text-center">
+                            <strong>$9.98</strong>
+                        </td>
                         <td class="col-md-1">
                             <button type="button" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-remove"></span> Remove
-                            </button></td>
+                            </button>
+                        </td>
                     </tr>
                     <tr>
                         <td>   </td>
@@ -64,7 +80,9 @@
                             <h5>Subtotal</h5>
                         </td>
                         <td class="text-right">
-                            <h5><strong>$24.59</strong></h5>
+                            <h5>
+                                <strong>$24.59</strong>
+                            </h5>
                         </td>
                     </tr>
                     <tr>
@@ -75,7 +93,9 @@
                             <h5>Estimated shipping</h5>
                         </td>
                         <td class="text-right">
-                            <h5><strong>$6.94</strong></h5>
+                            <h5>
+                                <strong>$6.94</strong>
+                            </h5>
                         </td>
                     </tr>
                     <tr>
@@ -86,7 +106,9 @@
                             <h3>Total</h3>
                         </td>
                         <td class="text-right">
-                            <h3><strong>$31.53</strong></h3>
+                            <h3>
+                                <strong>$31.53</strong>
+                            </h3>
                         </td>
                     </tr>
                     <tr>
@@ -96,11 +118,17 @@
                         <td>
                             <button type="button" class="btn btn-default">
                                 <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                            </button></td>
+                            </button>
+                        </td>
                         <td>
-                            <button type="button" class="btn btn-success">
-                                Checkout <span class="glyphicon glyphicon-play"></span>
-                            </button></td>
+                            <a href="/payment">
+                                <button type="button" class="btn btn-success">
+                                    Checkout
+                                    <span class="glyphicon glyphicon-play"></span>
+                                </button>
+                            </a>
+                        </td>
+
                     </tr>
                 </tbody>
             </table>
@@ -108,9 +136,5 @@
     </div>
 </div>
 
-<!-- <div class="container">
-    <h2>Your cart</h2>
-    <a href="/payment"><button class="btn btn-primary">Proceed to Payment</button></a>
-</div> -->
 
 <main-footer class="fixed-bottom"></main-footer>
