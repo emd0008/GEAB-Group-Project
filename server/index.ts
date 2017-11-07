@@ -3,6 +3,7 @@ import * as path from "path";
 import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import api from "./api";
+import configurePassport from './config/passport';
 
 let app = express();
 
@@ -17,9 +18,12 @@ let clientPath = path.join(__dirname, "../client");
 
 app.use(express.static(clientPath));
 
+
+
 app.use(cookieParser());
 
 app.use(bodyParser.json());
+configurePassport (app)
 
 app.use("/api", api);
 

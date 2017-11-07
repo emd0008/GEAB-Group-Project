@@ -5,6 +5,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const api_1 = require("./api");
+const passport_1 = require("./config/passport");
 let app = express();
 const prerender = require("prerender-node");
 prerender.set("prerenderToken", process.env.PRERENDER_TOKEN);
@@ -15,6 +16,7 @@ let clientPath = path.join(__dirname, "../client");
 app.use(express.static(clientPath));
 app.use(cookieParser());
 app.use(bodyParser.json());
+passport_1.default(app);
 app.use("/api", api_1.default);
 app.get("*", (req, res, next) => {
     if (isAsset(req.url)) {
