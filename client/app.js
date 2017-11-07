@@ -33,6 +33,10 @@ angular.module("MyNewPet", [
         templateUrl: "views/animals.html",
         controller: "AnimalsController"
       })
+      .when("/animals/:id", {
+        templateUrl: "views/singleanimal.html",
+        controller: 'SingleProductController'
+      })
       .when("/products/:id", {
         templateUrl: "views/singleproduct.html",
         controller: "SingleProductController"
@@ -80,10 +84,6 @@ angular.module("MyNewPet", [
       .when('/login', {
           templateUrl: 'views/login.html',
           controller: 'LoginController'
-      })
-      .when("/dogs", {
-        templateUrl: "views/animals.html",
-        controller: "AnimalsController"
       })
       .otherwise({
         redirectTo: "/"
