@@ -1,4 +1,5 @@
-angular.module("MyNewPet.controllers", ["ngRoute"])
+angular
+  .module("MyNewPet.controllers", ["ngRoute"])
   .controller("AnimalsController", [
     "SEOService",
     "$scope",
@@ -68,13 +69,21 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
     }
   ])
   .controller("SingleProductController", [
+    "SEOService",
     "$scope",
     "$location",
     "$resource",
     "$routeParams",
     "Products",
-    function($scope, $location, $resource, $routeParams, Products) {
-      $scope.product = Products.get({ id: $routeParams.id });
+    function(SEOService, $scope, $location, $resource, $routeParams, Products) {
+      $scope.product = Products.get({ id: $routeParams.id }, function(success) {
+        SEOService.setSEO({
+          title: "Homeward Bound | " + $scope.product.ProductName,
+          image: "http://" + $location.host() + $scope.product.image,
+          url: $location.url(),
+          description: $scope.product.description
+        });
+      });
     }
   ])
   .controller("ContactController", [
@@ -84,7 +93,7 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
     "$location",
     function(SEOService, $scope, ContactForm, $location) {
       SEOService.setSEO({
-        title: "Contact Us",
+        title: "Contact Homeward Bound",
         image: "http://" + $location.host() + "/images/dog-writing.jpg",
         url: $location.url(),
         description: "Contact Homeward Bound"
@@ -117,7 +126,7 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
     "Payment",
     function(SEOService, $scope, $location, Payment) {
       SEOService.setSEO({
-        title: "Checkout",
+        title: "Homeward Bound | Checkout",
         image: "http://" + $location.host() + "/images/dog-shopping.jpg",
         url: $location.url(),
         description: "Homeward Bound Checkout"
@@ -148,6 +157,7 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
       };
     }
   ])
+<<<<<<< HEAD
   .controller("LoginController", ["$scope", function($scope) {}])
   // .controller("ApplyController", [
   //     "$scope",
@@ -155,3 +165,17 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
   //     "$resource",
   //     function($scope, $location, $resource) {}
   // ]);
+=======
+  .controller("LoginController", ["$scope", function($scope) {}]);
+// .controller("CheckoutController", [
+//     "$scope",
+//     "$resource",
+//     function($scope, $resource) {}
+// ])
+// .controller("ApplyController", [
+//     "$scope",
+//     "$location",
+//     "$resource",
+//     function($scope, $location, $resource) {}
+// ]);
+>>>>>>> 22d7a8c2b9d9626544be77cb8127fa28e1e08b27
