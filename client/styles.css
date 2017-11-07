@@ -40,6 +40,11 @@ h5,
 nav {
   font-family: "Lobster", cursive;
 }
+/* Test */
+h1,
+h3 {
+  text-shadow: 4px 4px #000000;
+}
 
 a.btn.dropdown-toggle,
 a.btn.dropdown-toggle:focus {
@@ -145,6 +150,10 @@ a.btn.dropdown-toggle {
 
 .serviceHead {
   padding-bottom: 45px;
+}
+
+#jumboService {
+  background-image: url("images/petserv.jpg");
 }
 
 #jumboVet {
