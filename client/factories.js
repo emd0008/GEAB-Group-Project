@@ -1,4 +1,5 @@
 angular.module("MyNewPet.factories", [])
+
 .factory("ContactForm", ["$resource", function($resource) {
     return $resource("/api/contactform/:id", { id: "@id" });
   }
@@ -13,5 +14,12 @@ angular.module("MyNewPet.factories", [])
       url: "/api/products/subcategory/:SubCatId",
       isArray: true
     }
-  });
+  })
+}])
+
+.factory ('User', ['$resource', function ($resource) {
+  return $resource ('api/users/:id', {id: '@id'} )
 }]);
+
+  
+
