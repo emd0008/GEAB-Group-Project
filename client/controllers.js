@@ -1,78 +1,139 @@
 angular
   .module("MyNewPet.controllers", ["ngRoute"])
   .controller("AnimalsController", [
-    "$scope",
-    "$location",
-    "$resource",
-    "Animals",
-    function($scope, $location, $resource, Animals) {
-      function getAnimals() {
-        $scope.animals = Animals.query();
-      }
-    }
-  ])
-  .controller("SingleAnimalController", [
-    "$scope",
-    "$location",
-    "$resource",
-    function($scope, $location, $resource) {}
-  ])
-  .controller("ProductsController", [
+    "SEOService",
     "$scope",
     "$location",
     "$resource",
     "Products",
-    function($scope, $location, $resource, Products) {
-      function getProducts(){
-        $scope.products = Products.query();
-      }
-      getProducts();
+    "$routeParams",
+    function(SEOService, $scope, $location, $resource, Products, $routeParams) {
+      SEOService.setSEO({
+        title: "Homeward Bound Pet Adoption",
+        image: "http://" + $location.host() + "/images/cutegoldens.jpg",
+        url: $location.url(),
+        description: "Homeward Bound Pet Adoption"
+      });
+      $scope.products = Products.queryBySubcategory({
+        SubCatId: $routeParams.subcategoryid
+      });
+      console.log($scope.animals);
+    }
+  ])
+  .controller("HomeController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    function(SEOService, $scope, $location, $resource) {
+      SEOService.setSEO({
+        title: "Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Homeward Bound"
+      });
+    }
+  ])
+  .controller("SingleAnimalController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    function(SEOService, $scope, $location, $resource) {
+      SEOService.setSEO({
+        title: "Shop Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Shop Homeward Bound"
+      });
+    }
+  ])
+  .controller("ProductsController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    "Products",
+    "$routeParams",
+    function(SEOService, $scope, $location, $resource, Products, $routeParams) {
+      SEOService.setSEO({
+        title: "Shop Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Shop Homeward Bound"
+      });
+      $scope.products = Products.queryBySubcategory({
+        SubCatId: $routeParams.subcategoryid
+      });
+      console.log($scope.products);
     }
   ])
   .controller("SingleProductController", [
+    "SEOService",
     "$scope",
     "$location",
     "$resource",
     "$routeParams",
-    "SingleProduct",
-    function($scope, $location, $resource, $routeParams, SingleProduct) {
-      $scope.product = SingleProduct.get({id: $routeParams.id});
+    "Products",
+    function(SEOService, $scope, $location, $resource, $routeParams, Products) {
+      $scope.product = Products.get({ id: $routeParams.id }, function(success) {
+        SEOService.setSEO({
+          title: "Homeward Bound | " + $scope.product.ProductName,
+          image: "http://" + $location.host() + $scope.product.image,
+          url: $location.url(),
+          description: $scope.product.description
+        });
+      });
     }
   ])
-  .controller("SubCatController", ["$scope", "$location", "$routeParams", "Products", function($scope, $location, $resource, $routeParams, SubCategory) {
-    // You'll need the Product(s)  factory pulled in here
-    // this controller is in charge of getting a list of all products with a given subcategory
-    $scope.products=Products.queryBySubcategory({subcategoryid: $routeParams.id});
-  }
-])
-  .controller("ApplyController", [
-    "$scope",
-    "$location",
-    "$resource",
-    function($scope, $location, $resource) {}
-  ])
   .controller("ContactController", [
+    "SEOService",
     "$scope",
-    "$resource",
-    function($scope, $resource) {}
-  ])
-  .controller("SummaryController", [
-    "$scope",
-    "$resource",
-    function($scope, $resource) {}
-  ])
-  .controller("CheckoutController", [
-    "$scope",
-    "$resource",
-    function($scope, $resource) {}
+    "ContactForm",
+    "$location",
+    function(SEOService, $scope, ContactForm, $location) {
+      SEOService.setSEO({
+        title: "Contact Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-writing.jpg",
+        url: $location.url(),
+        description: "Contact Homeward Bound"
+      });
+      $scope.send = function() {
+        let contact = new ContactForm({
+          from: $scope.from,
+          subject: $scope.subject,
+          message: $scope.message
+        });
+
+        //makes a POST request to /api/contactform with a body with properties from and message
+        contact.$save(
+          function() {
+            alert(
+              "Thank you for your message! We will get back to you shortly."
+            );
+          },
+          function(err) {
+            console.log(err);
+          }
+        );
+      };
+    }
   ])
   .controller("PaymentController", [
+    "SEOService",
     "$scope",
+    "$location",
     "Payment",
-    function($scope, Payment) {
+    function(SEOService, $scope, $location, Payment) {
+      SEOService.setSEO({
+        title: "Homeward Bound | Checkout",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Homeward Bound Checkout"
+      });
       let elements = stripe.elements();
       let card = elements.create("card");
-      card.mount("#card-number");
+      card.mount("#card-field");
       $scope.process = function() {
         stripe.createToken(card).then(result => {
           if (result.error) {
@@ -96,7 +157,10 @@ angular
       };
     }
   ])
-  .controller("LoginController", ["$scope", function($scope) {}]);
-
-
-  $scope.products = Products.queryBySubcategory({ subcategoryid: $routeParams.id });  
+  .controller("LoginController", ["$scope", function($scope) {}])
+  // .controller("ApplyController", [
+  //     "$scope",
+  //     "$location",
+  //     "$resource",
+  //     function($scope, $location, $resource) {}
+  // ]);

@@ -1,14 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_1 = require("../config/db");
-function all() {
-    return db_1.rows("AllProducts");
-}
-exports.all = all;
-function product(id) {
+function read(id) {
     return db_1.row("ProductByID", [id]);
 }
-exports.product = product;
+exports.read = read;
 function productsByCat(CatID) {
     return db_1.rows("ProductsByCategory", [CatID]);
 }

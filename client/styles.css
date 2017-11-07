@@ -28,32 +28,28 @@ body {
     height: 100%;
 }
 
-h1 {
-    font-family: "Lobster", cursive;
+.card-img-top {
+    height: 200px
 }
 
-h2 {
-    font-family: "Lobster", cursive;
-}
-
-h3 {
-    font-family: "Lobster", cursive;
-}
-
-h4 {
-    font-family: "Lobster", cursive;
-}
-
-h5 {
-    font-family: "Lobster", cursive;
-}
-
+h1,
+h2,
+h3,
+h4,
+h5,
 nav {
     font-family: "Lobster", cursive;
 }
 
-nav {
-    font-family: "Lobster", cursive;
+a.btn.dropdown-toggle,
+a.btn.dropdown-toggle:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+a.nav-item,
+a.btn.dropdown-toggle {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 
@@ -67,6 +63,37 @@ nav {
     margin-bottom: 30px;
 }
 
+#jumboDogs {
+    background-image: url("/images/cutegoldens.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+#jumboCats {
+    background: url("/images/kittens.jpg") center center no-repeat;
+}
+
+/* Dog Walker/Sitter view */
+
+#jumboWalk {
+  background-image: url("/images/dogwalker.jpg");
+  background-position: center 23%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+/* Multi-Product view */
+
+#jumboProduct {
+  background-image: url("images/petshopping.jpg");
+  background-position: center 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%
+}
 
 /* Single Animal view */
 
@@ -76,18 +103,22 @@ nav {
 
 /* Apply view */
 
+#dropdownMenuLink {
+    font-family: "Lobster", cursive;
+}
+
 .labels {
     font-weight: bold;
     text-align: center;
 }
 
 .contact-form {
-    margin-top: 50px;
+    margin-top: 1em;
     margin-left: 120px;
     height: 400px;
     width: 850px;
-    padding-top: 10px;
     font-size: 2em;
+    margin-bottom: 1em;
 }
 
 #jumboApply {
@@ -107,8 +138,55 @@ nav {
     background: url("/images/contact.jpg") center center no-repeat scroll;
 }
 
+
+/* About Us view */
+
+.about-us {
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+
+/* Services view */
+
+.serviceHead {
+    padding-bottom: 45px;
+}
+
+#jumboVet {
+    background-image: url("/images/jumbovet2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#jumboObed {
+    background-image: url("/images/dogobed.jpg");
+    background-position: center 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#jumboGroom {
+    background-image: url("/images/petgroom.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.phone {
+    padding-bottom: 45px;
+}
+
+.contact {
+    padding-bottom: 45px;
+}
+
+
 /* Summary view */
 
+
 /* Checkout view */
+
 
 /* Purchase view */
