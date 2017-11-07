@@ -78,8 +78,8 @@ angular
     function(SEOService, $scope, $location, $resource, $routeParams, Products) {
       $scope.product = Products.get({ id: $routeParams.id }, function(success) {
         SEOService.setSEO({
-          title: $scope.product.ProductName,
-          image: $scope.product.image,
+          title: "Homeward Bound | " + $scope.product.ProductName,
+          image: "http://" + $location.host() + $scope.product.image,
           url: $location.url(),
           description: $scope.product.description
         });
@@ -93,7 +93,7 @@ angular
     "$location",
     function(SEOService, $scope, ContactForm, $location) {
       SEOService.setSEO({
-        title: "Contact Us",
+        title: "Contact Homeward Bound",
         image: "http://" + $location.host() + "/images/dog-writing.jpg",
         url: $location.url(),
         description: "Contact Homeward Bound"
@@ -126,7 +126,7 @@ angular
     "Payment",
     function(SEOService, $scope, $location, Payment) {
       SEOService.setSEO({
-        title: "Checkout",
+        title: "Homeward Bound | Checkout",
         image: "http://" + $location.host() + "/images/dog-shopping.jpg",
         url: $location.url(),
         description: "Homeward Bound Checkout"
@@ -158,21 +158,11 @@ angular
     }
   ])
   .controller("LoginController", ["$scope", function($scope) {}]);
-// .controller("SummaryController", [
-//     "$scope",
-//     "$resource",
-//     function($scope, $resource) {}
-// ])
 // .controller("CheckoutController", [
 //     "$scope",
 //     "$resource",
 //     function($scope, $resource) {}
 // ])
-// .controller("SubCatController", ["$scope", "$location", "$routeParams", "Products", function($scope, $location, $resource, $routeParams, SubCategory) {
-//     // You'll need the Product(s)  factory pulled in here
-//     // this controller is in charge of getting a list of all products with a given subcategory
-//     $scope.products = Products.queryBySubcategory({ subcategoryid: $routeParams.id });
-// }])
 // .controller("ApplyController", [
 //     "$scope",
 //     "$location",
