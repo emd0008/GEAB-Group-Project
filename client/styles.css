@@ -28,6 +28,10 @@ body {
     height: 100%;
 }
 
+.card-img-top {
+    height: 200px
+}
+
 h1,
 h2,
 h3,
@@ -143,14 +147,28 @@ a.btn.dropdown-toggle {
 }
 
 
-/* Vets view */
+/* Services view */
 
-.vet-heading {
+.serviceHead {
     padding-bottom: 45px;
 }
 
 #jumboVet {
-    background-image: url("/images/vetjumbo.jpg");
+    background-image: url("/images/jumbovet2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#jumboObed {
+    background-image: url("/images/dogobed.jpg");
+    background-position: center 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#jumboGroom {
+    background-image: url("/images/petgroom.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
