@@ -157,7 +157,6 @@ angular
       };
     }
   ])
-<<<<<<< HEAD
   .controller("LoginController", ["$scope", function($scope) {}])
   // .controller("ApplyController", [
   //     "$scope",
@@ -165,17 +164,3 @@ angular
   //     "$resource",
   //     function($scope, $location, $resource) {}
   // ]);
-=======
-  .controller("LoginController", ["$scope", function($scope) {}]);
-// .controller("CheckoutController", [
-//     "$scope",
-//     "$resource",
-//     function($scope, $resource) {}
-// ])
-// .controller("ApplyController", [
-//     "$scope",
-//     "$location",
-//     "$resource",
-//     function($scope, $location, $resource) {}
-// ]);
->>>>>>> 22d7a8c2b9d9626544be77cb8127fa28e1e08b27
