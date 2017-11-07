@@ -4,13 +4,14 @@
 <div class="container jumbotron">
     <div class="row">
         <div class="col-lg-9">
-            <h2 class="card-title">{{ product.ProductName }}</h2>
             <div class="card mt-4">
                 <img class="img-fluid" ng-src="{{ product.image  }}">
                 <div class="card-body">
-                    <h4>{{ product.price | currency }}</h4>
+                    <h3 class="card-title">{{ product.name }}</h3>
                     <p class="card-text">{{ product.description }}</p>
-                    <button class="btn btn-primary" ng-click="addToCart()">Add To Cart</button>
+                    <a href="/apply">
+                    <button class="btn btn-primary">Apply to Adopt!</button>
+                </a>
                 </div>
             </div>
         </div>

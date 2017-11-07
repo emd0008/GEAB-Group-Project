@@ -11,7 +11,6 @@ const prerender = require("prerender-node");
 prerender.set("prerenderToken", process.env.PRERENDER_TOKEN);
 // prerender.set("prerenderServiceUrl", "http://localhost:1337/");
 app.use(prerender);
-console.log("SERVER LISTENING");
 let clientPath = path.join(__dirname, "../client");
 app.use(express.static(clientPath));
 app.use(cookieParser());
@@ -26,7 +25,9 @@ app.get("*", (req, res, next) => {
         res.sendFile(path.join(clientPath, "index.html"));
     }
 });
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function () {
+    console.log("SERVER LISTENING");
+});
 function isAsset(path) {
     let pieces = path.split("/");
     if (pieces.length === 0) {
