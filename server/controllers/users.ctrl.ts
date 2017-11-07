@@ -6,20 +6,23 @@ import * as utils from '../utils';
 
 let router = express.Router();
 
+
 router.post('/login', (req, res, next) => {
+    // In here, it's our job to kick off authentication
     passport.authenticate('local', (err: any, user: models.IUser, info: any) => {
-        if(err){
+        if (err) { // There was some kind of db error
             console.log(err);
             return res.sendStatus(500);
         }
-        if(!user){
-            return res.status(401).send(info);
+        if (!user) { // Invalid login attempt
+            return res.sendStatus(401);
         }
+        // Valid login, tell Passport to set req.user
         req.logIn(user, (err) => {
-            if(err){
+            if (err) {
                 console.log(err);
                 return res.sendStatus(500);
-            }else{
+            } else {
                 delete user.password;
                 return res.send(user);
             }

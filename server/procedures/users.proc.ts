@@ -15,3 +15,7 @@ export function all(): Promise<Array<models.IUser>> {
 export function read(id: number): Promise<models.IUser> {
     return row('GetUser', [id]);
 }
+
+export function create(email: string, hash: string, firstName: string, lastName: string) {
+    return row('InsertUser', [firstName, lastName, email, hash]);
+}

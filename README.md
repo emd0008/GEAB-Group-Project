@@ -81,5 +81,11 @@ DATABASE SETUP
     * Returns id, ProductName, description, price, image, SubcatID, Subcategory, CatID, Category
   * ProductsBySubcategory(id: number)
     * Returns id, ProductName, description, price, image, SubcatID, Subcategory, CatID, Category
-  * CreateUser(email: string, password, string)
+  * CreateUser(email: string, password: string, firstname: string, lastname: string)
     * Creates a record in the user table
+  * GetUsers()
+    * Returns id, firstname, lastname, email for all records in user table
+  * GetUser(id: number)
+    * Returns id, firstname, lastname, email for specified record in user table
+  * GetUserByEmail(email: string)
+    * Returns id, firstname, lastname, email, password for specified record in user table

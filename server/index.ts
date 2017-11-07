@@ -35,7 +35,9 @@ app.get("*", (req, res, next) => {
   }
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("SERVER LISTENING")
+});
 
 function isAsset(path: string) {
   let pieces = path.split("/");

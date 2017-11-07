@@ -26,7 +26,9 @@ app.get("*", (req, res, next) => {
         res.sendFile(path.join(clientPath, "index.html"));
     }
 });
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function () {
+    console.log("SERVER LISTENING");
+});
 function isAsset(path) {
     let pieces = path.split("/");
     if (pieces.length === 0) {

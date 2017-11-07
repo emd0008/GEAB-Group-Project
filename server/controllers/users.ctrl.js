@@ -7,14 +7,16 @@ const auth = require("../middleware/auth.mw");
 const utils = require("../utils");
 let router = express.Router();
 router.post('/login', (req, res, next) => {
+    // In here, it's our job to kick off authentication
     passport.authenticate('local', (err, user, info) => {
         if (err) {
             console.log(err);
             return res.sendStatus(500);
         }
         if (!user) {
-            return res.status(401).send(info);
+            return res.sendStatus(401);
         }
+        // Valid login, tell Passport to set req.user
         req.logIn(user, (err) => {
             if (err) {
                 console.log(err);
