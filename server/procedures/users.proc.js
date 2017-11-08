@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_1 = require("../config/db");
-function createUser(email, hash) {
-    return db_1.row('CreateUser', [email, hash]);
+function createUser(firstName, lastName, email, hash) {
+    return db_1.row('CreateUser', [firstName, lastName, email, hash]);
 }
 exports.createUser = createUser;
 function readByEmail(email) {

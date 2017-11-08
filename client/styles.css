@@ -141,9 +141,9 @@ a.btn.dropdown-toggle {
 
 /* About Us view */
 
-.about-us {
-  padding-top: 30px;
-  padding-bottom: 15px;
+#jumboAbout {
+  margin: 30px;
+  margin-bottom: 150px;
 }
 
 /* Services view */
