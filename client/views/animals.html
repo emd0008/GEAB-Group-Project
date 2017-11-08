@@ -3,7 +3,7 @@
 <div class="jumbotron jumbotron-fluid" id="jumboDogs">
     <div class="col-lg-12">
         <h1 class="display-2 text-center text-white mt-4" id="header">Give Them a Good Home!</h1>
-        <h3 class="display-4 text-center text-black" id="contactP">Which One Will You Choose?</h3>
+        <h3 class="display-4 text-center text-white" id="contactP">Which One Will You Choose?</h3>
     </div>
 </div>
 
@@ -12,12 +12,12 @@
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" ng-repeat="product in products">
             <div class="card h-100">
-                <a href="/products/{{product.id}}">
+                <a href="/animals/{{ product.id }}">
                     <img class="card-img-top" src="{{ product.image }}" alt="#">
                 </a>
                 <div class="card-body">
                     <h4 class="card-title">
-                        <a href="/products/{{product.id}}">{{ product.ProductName }}</a>
+                        <a href="/animals/{{ product.id} }">{{ product.ProductName }}</a>
                     </h4>
                     <p class="card-text">{{ product.description }}</p>
                 </div>

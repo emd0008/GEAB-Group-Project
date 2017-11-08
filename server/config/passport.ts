@@ -1,11 +1,12 @@
-import * as express from 'express';
-import * as passport from 'passport';
+import * as express from "express";
+import * as passport from "passport";
 import * as session from "express-session";
 let MySQLStore = require('express-mysql-session') (session);
 import {Strategy as LocalStrategy } from 'passport-local';
 import * as userProc from '../procedures/users.proc';
 import {pool} from './db';
 import * as utils from '../utils';
+
 export default function configurePassport(app: express.Express) {
     passport.use(new LocalStrategy({
         usernameField: 'email',
@@ -31,33 +32,36 @@ export default function configurePassport(app: express.Express) {
     
     }));
     
-    
-    passport.serializeUser((user: models.IUser, done) => {
-        done(null, user.id);
+  passport.serializeUser((user: models.IUser, done) => {
+    done(null, user.id);
+  });
 
-    
-       
-    });
-    
-    passport.deserializeUser((id: number, done) => {
-        userProc.read(id). then ((user)  => {
-            done(null, user);
-        }, (err) => {
-            done(err);
-        });
-    });
-    
-    let sessionStore = new MySQLStore({
-        createDatabaseTable: true
-    }, pool);
+  passport.deserializeUser((id: number, done) => {
+    userProc.read(id).then(
+      user => {
+        done(null, user);
+      },
+      err => {
+        done(err);
+      }
+    );
+  });
 
-    app.use(session({
-        secret: 'random string!',
-        store: sessionStore,
-        resave: false,
-        saveUninitialized: false
-    }));
-    app.use(passport.initialize());
-    app.use(passport.session());
-   
+  let sessionStore = new MySQLStore(
+    {
+      createDatabaseTable: true
+    },
+    pool
+  );
+
+  app.use(
+    session({
+      secret: "dgpuueFmsoEq",
+      store: sessionStore,
+      resave: false,
+      saveUninitialized: false
+    })
+  );
+  app.use(passport.initialize());
+  app.use(passport.session());
 }

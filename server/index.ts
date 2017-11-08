@@ -3,27 +3,22 @@ import * as path from "path";
 import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import api from "./api";
-import configurePassport from './config/passport';
+import configurePassport from "./config/passport";
 
 let app = express();
 
 const prerender = require("prerender-node");
 prerender.set("prerenderToken", process.env.PRERENDER_TOKEN);
-// prerender.set("prerenderServiceUrl", "http://localhost:1337/");
 app.use(prerender);
-
-console.log("SERVER LISTENING");
 
 let clientPath = path.join(__dirname, "../client");
 
 app.use(express.static(clientPath));
 
-
-
 app.use(cookieParser());
 
 app.use(bodyParser.json());
-configurePassport (app)
+configurePassport(app);
 
 app.use("/api", api);
 
@@ -35,8 +30,8 @@ app.get("*", (req, res, next) => {
   }
 });
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("SERVER LISTENING")
+app.listen(process.env.PORT || 3000, function() {
+  console.log("SERVER LISTENING");
 });
 
 function isAsset(path: string) {
