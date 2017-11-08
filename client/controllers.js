@@ -119,6 +119,7 @@ angular
             };
         }
     ])
+<<<<<<< HEAD
 
 //makes a POST request to /api/contactform with a body with properties from and message
 // contact.$save(
@@ -216,3 +217,73 @@ angular
                         //     "$resource",
                         //     function($scope, $location, $resource) {}
                         // ]);
+=======
+  .controller("CartController", [
+    "$scope",
+    "$location",
+    "CartService",
+    "Purchase",
+    "SEOService",
+    function($scope, $location, CartService, Purchase, SEOService) {
+      if (localStorage.getItem("cart" === "")) {
+        console.log("No items in cart");
+      } else {
+        $scope.items = JSON.parse(localStorage.getItem("cart"));
+        console.log($scope.items);
+      }
+    },
+
+    ($scope.removeItem = function() {
+      alert("Are you sure you want to remove this item?");
+      $scope.items = JSON.parse(localStorage("cart"));
+      if ($scope.items.quantity == "1") {
+        // delete from cart all together
+      } else {
+        $scope.items.quantity = $scope.items.quantity - 1;
+      }
+    })
+  ])
+    .controller("PaymentController", [
+        "SEOService",
+        "$scope",
+        "$location",
+        "Payment",
+        function (SEOService, $scope, $location, Payment) {
+            SEOService.setSEO({
+                title: "Homeward Bound | Checkout",
+                image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+                url: $location.url(),
+                description: "Homeward Bound Checkout"
+            });
+            let elements = stripe.elements();
+            let card = elements.create("card");
+            card.mount("#card-field");
+            $scope.process = function () {
+                stripe.createToken(card).then(result => {
+                    if (result.error) {
+                        $scope.error = result.error.message;
+                    } else {
+                        let p = new Payment({
+                            token: result.token.id,
+                            amount: $scope.amount
+                        });
+                    p.$save(
+                        function () {
+                            $location.path("/");
+                        }, function (err) {
+                            $scope.error = err.data;
+                            }
+                        );
+                    }
+                });
+            };
+        }
+    ]); 
+// .controller("LoginController", ["$scope", function($scope) {}]);
+// .controller("ApplyController", [
+//     "$scope",
+//     "$location",
+//     "$resource",
+//     function($scope, $location, $resource) {}
+// ]);
+>>>>>>> 92588912db0a0ded76653434a9599ccfae33d6e9
