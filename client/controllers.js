@@ -17,7 +17,7 @@ angular
       $scope.products = Products.queryBySubcategory({
         SubCatId: $routeParams.subcategoryid
       });
-      console.log($scope.animals);
+      console.log($scope.products);
     }
   ])
   .controller("HomeController", [
