@@ -3,14 +3,14 @@
 
 <div class="container jumbotron">
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-9">                
             <h2 class="card-title">{{ product.ProductName }}</h2>
             <div class="card mt-4">
                 <img class="img-fluid" ng-src="{{ product.image  }}">
                 <div class="card-body">
-                    <h4>{{ product.price | currency }}</h4>
                     <p class="card-text">{{ product.description }}</p>
-                    <button class="btn btn-primary" ng-click="addToCart()">Add To Cart</button>
+                    <a href="/apply" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Apply to Adopt {{ product.ProductName }}!</a>
+                    <a href="/animals/subcategory/:subcategoryid" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back</a>
                 </div>
             </div>
         </div>

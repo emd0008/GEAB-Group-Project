@@ -9,7 +9,6 @@ let app = express();
 
 const prerender = require("prerender-node");
 prerender.set("prerenderToken", process.env.PRERENDER_TOKEN);
-// prerender.set("prerenderServiceUrl", "http://localhost:1337/");
 app.use(prerender);
 
 let clientPath = path.join(__dirname, "../client");

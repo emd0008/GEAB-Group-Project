@@ -1,4 +1,5 @@
 angular
+<<<<<<< HEAD
     .module("MyNewPet.controllers", ["ngRoute"])
     .controller("AnimalsController", [
         "SEOService",
@@ -131,6 +132,113 @@ angular
     //             alert("Are you sure you want to remove ths item?");
     //             $scope.products = JSON.parse(localStorage("cart"));
     //             if ($scope.products.quantity === "1") {
+=======
+  .module("MyNewPet.controllers", ["ngRoute"])
+  .controller("AnimalsController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    "Products",
+    "$routeParams",
+    function(SEOService, $scope, $location, $resource, Products, $routeParams) {
+      SEOService.setSEO({
+        title: "Homeward Bound Pet Adoption",
+        image: "http://" + $location.host() + "/images/cutegoldens.jpg",
+        url: $location.url(),
+        description: "Homeward Bound Pet Adoption"
+      });
+      $scope.products = Products.queryBySubcategory({
+        SubCatId: $routeParams.subcategoryid
+      });
+      console.log($scope.products);
+    }
+  ])
+  .controller("HomeController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    function(SEOService, $scope, $location, $resource) {
+      SEOService.setSEO({
+        title: "Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Homeward Bound"
+      });
+    }
+  ])
+  .controller("SingleAnimalController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    function(SEOService, $scope, $location, $resource) {
+      SEOService.setSEO({
+        title: "Shop Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Shop Homeward Bound"
+      });
+    }
+  ])
+  .controller("ProductsController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    "Products",
+    "$routeParams",
+    function(SEOService, $scope, $location, $resource, Products, $routeParams) {
+      SEOService.setSEO({
+        title: "Shop Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Shop Homeward Bound"
+      });
+      $scope.products = Products.queryBySubcategory({
+        SubCatId: $routeParams.subcategoryid
+      });
+      console.log($scope.products);
+    }
+  ])
+  .controller("SingleProductController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    "$routeParams",
+    "Products",
+    function(SEOService, $scope, $location, $resource, $routeParams, Products) {
+      $scope.product = Products.get({ id: $routeParams.id }, function(success) {
+        SEOService.setSEO({
+          title: "Homeward Bound | " + $scope.product.ProductName,
+          image: "http://" + $location.host() + $scope.product.image,
+          url: $location.url(),
+          description: $scope.product.description
+        });
+      });
+    }
+  ])
+  .controller("ContactController", [
+    "SEOService",
+    "$scope",
+    "ContactForm",
+    "$location",
+    function(SEOService, $scope, ContactForm, $location) {
+      SEOService.setSEO({
+        title: "Contact Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-writing.jpg",
+        url: $location.url(),
+        description: "Contact Homeward Bound"
+      });
+      $scope.send = function() {
+        let contact = new ContactForm({
+          from: $scope.from,
+          subject: $scope.subject,
+          message: $scope.message
+        });
+>>>>>>> 776ac61111c9dc3f966576087f141ae23bba7d3c
 
 //             } else {
 //                 $scope.products.quantity = $scope.products.qauntity - 1;
