@@ -120,6 +120,7 @@ angular
         }
     ])
 
+<<<<<<< HEAD
 .controller("PaymentController", [
         "SEOService",
         "$scope",
@@ -131,6 +132,70 @@ angular
                 image: "http://" + $location.host() + "/images/dog-shopping.jpg",
                 url: $location.url(),
                 description: "Homeward Bound Checkout"
+=======
+        //makes a POST request to /api/contactform with a body with properties from and message
+        contact.$save(
+          function() {
+            alert(
+              "Thank you for your message! We will get back to you shortly."
+            );
+          },
+          function(err) {
+            console.log(err);
+          }
+        );
+      };
+    }
+  ])
+  .controller("CartController", [
+    "$scope",
+    "$location",
+    "CartService",
+    "Purchase",
+    "SEOService",
+    function($scope, $location, CartService, Purchase, SEOService) {
+      if (localStorage.getItem("cart" === "")) {
+        console.log("No items in cart");
+      } else {
+        $scope.items = JSON.parse(localStorage.getItem("cart"));
+        console.log($scope.items);
+      }
+    },
+
+    ($scope.removeItem = function() {
+      alert("Are you sure you want to remove this item?");
+      $scope.items = JSON.parse(localStorage("cart"));
+      if ($scope.items.quantity == "1") {
+        // delete from cart all together
+      } else {
+        $scope.items.quantity = $scope.items.quantity - 1;
+      }
+    })
+  ])
+  .controller("PaymentController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "Payment",
+    function(SEOService, $scope, $location, Payment) {
+      SEOService.setSEO({
+        title: "Homeward Bound | Checkout",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Homeward Bound Checkout"
+      });
+      let elements = stripe.elements();
+      let card = elements.create("card");
+      card.mount("#card-field");
+      $scope.process = function() {
+        stripe.createToken(card).then(result => {
+          if (result.error) {
+            $scope.error = result.error.message;
+          } else {
+            let p = new Payment({
+              token: result.token.id,
+              amount: $scope.amount
+>>>>>>> 00a815dff1dbb4c709ca0faa9261f4cd4e87a0b7
             });
             let elements = stripe.elements();
             let card = elements.create("card");
@@ -145,6 +210,7 @@ angular
                             amount: $scope.amount
                         });
 
+<<<<<<< HEAD
                         p.$save(
                             function() {
                                 $location.path("/");
@@ -165,3 +231,25 @@ angular
     //     "$resource",
     //     function($scope, $location, $resource) {}
     // ]);
+=======
+            p.$save(
+              function() {
+                $location.path("/");
+              },
+              function(err) {
+                $scope.error = err.data;
+              }
+            );
+          }
+        });
+      };
+    }
+  ])
+  .controller("LoginController", ["$scope", function($scope) {}]);
+// .controller("ApplyController", [
+//     "$scope",
+//     "$location",
+//     "$resource",
+//     function($scope, $location, $resource) {}
+// ]);
+>>>>>>> 00a815dff1dbb4c709ca0faa9261f4cd4e87a0b7
