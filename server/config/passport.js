@@ -2,24 +2,32 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const passport = require("passport");
 const session = require("express-session");
-let MySQLStore = require("express-mysql-session")(session);
+let MySQLStore = require('express-mysql-session')(session);
 const passport_local_1 = require("passport-local");
 const userProc = require("../procedures/users.proc");
 const db_1 = require("./db");
+const utils = require("../utils");
 function configurePassport(app) {
     passport.use(new passport_local_1.Strategy({
-        usernameField: "email",
-        passwordField: "password"
+        usernameField: 'email',
+        passwordField: 'password'
     }, (email, password, done) => {
-        userProc.readByEmail(email).then(user => {
+        let loginError = 'Invalid Login Credentials';
+        userProc.readByEmail(email).then((user) => {
             if (!user) {
-                return done(null, false);
+                return done(null, false, { message: loginError });
             }
-            if (user.password !== password) {
-                return done(null, false, { message: "Nope!" });
-            }
-            return done(null, user);
-        }, err => {
+            return utils.checkPassword(password, user.password)
+                .then((matches) => {
+                if (matches) {
+                    delete user.password;
+                    return done(null, user);
+                }
+                else {
+                    return done(null, false, { message: loginError });
+                }
+            });
+        }).catch((err) => {
             return done(err);
         });
     }));

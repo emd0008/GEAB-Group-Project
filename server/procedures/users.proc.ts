@@ -1,7 +1,7 @@
 import {row, rows, empty} from '../config/db';
 
-export function createUser(email: string, hash: string):Promise <models.IUser>{
-    return row('CreateUser', [email, hash]);
+export function createUser(firstName: string, lastName: string, email: string, hash: string):Promise <models.IUser>{
+    return row('CreateUser', [firstName, lastName, email, hash]);
 }
 
 export function readByEmail(email:string):Promise <models.IUser>{ 
