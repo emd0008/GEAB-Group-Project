@@ -119,6 +119,31 @@ angular
       };
     }
   ])
+  .controller("CartController", [
+    "$scope",
+    "$location",
+    "CartService",
+    "Purchase",
+    "SEOService",
+    function($scope, $location, CartService, Purchase, SEOService) {
+      if (localStorage.getItem("cart" === "")) {
+        console.log("No items in cart");
+      } else {
+        $scope.items = JSON.parse(localStorage.getItem("cart"));
+        console.log($scope.items);
+      }
+    },
+
+    ($scope.removeItem = function() {
+      alert("Are you sure you want to remove this item?");
+      $scope.items = JSON.parse(localStorage("cart"));
+      if ($scope.items.quantity == "1") {
+        // delete from cart all together
+      } else {
+        $scope.items.quantity = $scope.items.quantity - 1;
+      }
+    })
+  ])
   .controller("PaymentController", [
     "SEOService",
     "$scope",
@@ -157,10 +182,10 @@ angular
       };
     }
   ])
-  .controller("LoginController", ["$scope", function($scope) {}])
-  // .controller("ApplyController", [
-  //     "$scope",
-  //     "$location",
-  //     "$resource",
-  //     function($scope, $location, $resource) {}
-  // ]);
+  .controller("LoginController", ["$scope", function($scope) {}]);
+// .controller("ApplyController", [
+//     "$scope",
+//     "$location",
+//     "$resource",
+//     function($scope, $location, $resource) {}
+// ]);
