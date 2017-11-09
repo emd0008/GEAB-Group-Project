@@ -136,7 +136,8 @@ a.btn.dropdown-toggle {
 /* Contact view */
 
 #jumboContact {
-  background: url("/images/contact.jpg") center center no-repeat scroll;
+  background: url("/images/contact.jpg") center top no-repeat scroll;
+  background-position: -150px -200px;
 }
 
 /* About Us view */
