@@ -1,193 +1,235 @@
 /* Welcome Page */
 
 body {
-  padding-top: 54px;
+    padding-top: 54px;
 }
 
 @media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
+    body {
+        padding-top: 56px;
+    }
 }
 
 .portfolio-item {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .business-header {
-  height: 50vh;
-  min-height: 300px;
-  background: url("/images/header.jpg") center center no-repeat scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+    height: 50vh;
+    min-height: 300px;
+    background: url("/images/header.jpg") center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 .card {
-  height: 100%;
+    height: 100%;
 }
+
 
 /* .card-img-top {
     height: 200px
 } */
 
 h1,
-h2,
 h3,
 h4,
 h5,
 nav {
-  font-family: "Lobster", cursive;
+    font-family: "Lobster", cursive;
 }
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 /* Test */
+
 h1,
 h3 {
-  text-shadow: 4px 4px #000000;
+    text-shadow: 4px 4px #000000;
 }
 
 a.btn.dropdown-toggle,
 a.btn.dropdown-toggle:focus {
-  outline: 0;
-  box-shadow: none;
+    outline: 0;
+    box-shadow: none;
 }
 
 a.nav-item,
 a.btn.dropdown-toggle {
-  color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
 }
+
+a.nav-link {
+    color: white;
+    font-size: 20px;
+}
+
+a.navbar-brand {
+    font-size: 30px;
+}
+
 
 /* Animal view */
 
 .portfolio-item {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .pagination {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 #jumboDogs {
-  background-image: url("/images/cutegoldens.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
+    background-image: url("/images/cutegoldens.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
 
 #jumboCats {
-  background: url("/images/kittens.jpg") center center no-repeat;
+    background: url("/images/kittens.jpg") center center no-repeat;
 }
+
 
 /* Dog Walker/Sitter view */
 
 #jumboWalk {
-  background-image: url("/images/dogwalker.jpg");
-  background-position: center 23%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
+    background-image: url("/images/dogwalker.jpg");
+    background-position: center 23%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
+
 
 /* Multi-Product view */
 
 #jumboProduct {
-  background-image: url("images/petshopping.jpg");
-  background-position: center 55%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
+    background-image: url("images/petshopping.jpg");
+    background-position: center 55%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
+
 
 /* Single Animal view */
 
+
 /* Single Product view */
+
 
 /* Apply view */
 
 #dropdownMenuLink {
-  font-family: "Lobster", cursive;
+    font-family: "Lobster", cursive;
 }
 
 .labels {
-  font-weight: bold;
-  text-align: center;
+    font-weight: bold;
+    text-align: center;
 }
 
 .contact-form {
-  margin-top: 1em;
-  margin-left: 120px;
-  height: 400px;
-  width: 850px;
-  font-size: 2em;
-  margin-bottom: 1em;
+    margin-top: 1em;
+    margin-left: 120px;
+    height: 400px;
+    width: 850px;
+    font-size: 2em;
+    margin-bottom: 1em;
 }
 
 #jumboApply {
-  background: url("/images/apply.jpg") center center no-repeat;
-  background-size: 1441px 500px;
+    background: url("/images/apply.jpg") center center no-repeat;
+    background-size: 1441px 500px;
 }
 
 #applyBtn {
-  margin-left: 85px;
-  margin-bottom: 30px;
+    margin-left: 85px;
+    margin-bottom: 30px;
 }
+
 
 /* Contact view */
 
 #jumboContact {
+<<<<<<< HEAD
+    background: url("/images/contact.jpg") center center no-repeat scroll;
+=======
   background: url("/images/contact.jpg") center top no-repeat scroll;
   background-position: -150px -200px;
+>>>>>>> 237fc61bed52a60e238b919f9fd30c1499f5c018
 }
+
 
 /* About Us view */
 
 #jumboAbout {
-  margin: 30px;
-  margin-bottom: 150px;
+    margin: 30px;
+    margin-bottom: 150px;
 }
+
 
 /* Services view */
 
 .serviceHead {
-  padding-bottom: 45px;
+    padding-bottom: 45px;
 }
 
 #jumboService {
-  background-image: url("images/petserv.jpg");
+    background-image: url("images/petserv.jpg");
 }
 
 #jumboVet {
-  background-image: url("/images/jumbovet2.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("/images/jumbovet2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #jumboObed {
-  background-image: url("/images/dogobed.jpg");
-  background-position: center 15%;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("/images/dogobed.jpg");
+    background-position: center 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #jumboGroom {
-  background-image: url("/images/petgroom.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("/images/petgroom.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .phone {
-  padding-bottom: 45px;
+    padding-bottom: 45px;
 }
 
 .contact {
-  padding-bottom: 45px;
+    padding-bottom: 45px;
 }
+
 
 /* Summary view */
 
+
 /* Checkout view */
 
+
 /* Purchase view */
+
+
+/* Login View */
+
+form {
+    padding-top: 100px;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-bottom: 100px;
+}
