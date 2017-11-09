@@ -159,7 +159,12 @@ a.navbar-brand {
 /* Contact view */
 
 #jumboContact {
+<<<<<<< HEAD
     background: url("/images/contact.jpg") center center no-repeat scroll;
+=======
+  background: url("/images/contact.jpg") center top no-repeat scroll;
+  background-position: -150px -200px;
+>>>>>>> 237fc61bed52a60e238b919f9fd30c1499f5c018
 }
 
 
