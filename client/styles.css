@@ -64,6 +64,15 @@ a.btn.dropdown-toggle {
     color: rgba(255, 255, 255, 0.5);
 }
 
+a.nav-link {
+    color: white;
+    font-size: 20px;
+}
+
+a.navbar-brand {
+    font-size: 30px;
+}
+
 
 /* Animal view */
 
@@ -209,3 +218,13 @@ a.btn.dropdown-toggle {
 
 
 /* Purchase view */
+
+
+/* Login View */
+
+form {
+    padding-top: 100px;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-bottom: 100px;
+}
