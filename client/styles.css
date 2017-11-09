@@ -42,6 +42,7 @@ nav {
     font-family: "Lobster", cursive;
 }
 
+
 /* h2 {
     font-family: Arial, Helvetica, sans-serif;
 } */
@@ -160,12 +161,10 @@ a.navbar-brand {
 /* Contact view */
 
 #jumboContact {
-<<<<<<< HEAD
-    background: url("/images/contact.jpg") center center no-repeat scroll;
-=======
-  background: url("/images/contact.jpg") center top no-repeat scroll;
-  background-position: -150px -200px;
->>>>>>> 237fc61bed52a60e238b919f9fd30c1499f5c018
+    <<<<<<< HEAD background: url("/images/contact.jpg") center center no-repeat scroll;
+    =======background: url("/images/contact.jpg") center top no-repeat scroll;
+    background-position: -150px -200px;
+    >>>>>>>237fc61bed52a60e238b919f9fd30c1499f5c018
 }
 
 
@@ -228,7 +227,7 @@ a.navbar-brand {
 
 /* Login View */
 
-form {
+.login {
     padding-top: 100px;
     padding-left: 400px;
     padding-right: 400px;
