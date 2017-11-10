@@ -19,7 +19,7 @@
                         <a ng-href="/products/{{product.id}} ">{{ product.ProductName }}</a>
                     </h4>
                     <p class="card-text ">{{ product.description }}</p>
-                    <h4>${{ product.price }}</h4>
+                    <h4 style="text-align: center">{{ product.price | currency}}</h4>
                 </div>
                 <a class="btn btn-primary " ng-href="/products/{{ product.id }} ">View Item</a>
             </div>

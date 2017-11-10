@@ -38,6 +38,10 @@ body {
   height: 100%;
 }
 
+.card-text {
+  text-align: center;
+}
+
 /* .card-img-top {
     height: 200px
 } */
@@ -223,4 +227,12 @@ a.navbar-brand {
   padding-left: 400px;
   padding-right: 400px;
   padding-bottom: 100px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.h-100 {
+  border-width: 0px;
 }
