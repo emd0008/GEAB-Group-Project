@@ -42,6 +42,9 @@ angular.module("MyNewPet.services", [])
           return product.id !== id;
         })
       };
+      this.emptyCart = function() {
+        cartItems = []
+      }
     }
   ])
   .service('UserService', ['$http', '$location', function($http, $location) {
