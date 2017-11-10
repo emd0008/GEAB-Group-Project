@@ -118,19 +118,6 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
             };
         }
     ])
-    .controller("CartController", [
-        "$scope",
-        "$location",
-        ($scope.removeItem = function () {
-            alert("Are you sure you want to remove this item?");
-            $scope.items = JSON.parse(localStorage("cart"));
-            if ($scope.items.quantity == "1") {
-                // delete from cart all together
-            } else {
-                $scope.items.quantity = $scope.items.quantity - 1;
-            }
-        })
-    ])
     .controller("PaymentController", [
         "SEOService",
         "$scope",
