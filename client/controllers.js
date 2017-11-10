@@ -167,11 +167,16 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
                 });
             };
         }
-    ]);
-// .controller("LoginController", ["$scope", function($scope) {}]);
-// .controller("ApplyController", [
-//     "$scope",
-//     "$location",
-//     "$resource",
-//     function($scope, $location, $resource) {}
-// ]);
+    ])
+    .controller("LoginController", [
+        "$scope", 
+        function($scope) {
+
+    }])
+    .controller("ApplyController", [
+        "$scope",
+        "$location",
+        "$resource",
+        function($scope, $location, $resource) {
+
+    }]);
