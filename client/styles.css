@@ -172,7 +172,9 @@ a.navbar-brand {
 
 #jumboAbout {
     margin: 30px;
-    margin-bottom: 150px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+    text-align: center;
 }
 
 
