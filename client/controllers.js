@@ -54,17 +54,24 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
         "$resource",
         "Products",
         "$routeParams",
-        function (SEOService, $scope, $location, $resource, Products, $routeParams) {
+        "CartService",
+        function (SEOService, $scope, $location, $resource, Products, $routeParams, CartService) {
             SEOService.setSEO({
                 title: "Shop Homeward Bound",
                 image: "http://" + $location.host() + "/images/dog-shopping.jpg",
                 url: $location.url(),
                 description: "Shop Homeward Bound"
             });
+
             $scope.products = Products.queryBySubcategory({
                 SubCatId: $routeParams.subcategoryid
             });
-            console.log($scope.products);
+            console.log("Log for " + $scope.products);
+
+            $scope.addToCart = function() {
+                CartService.addItem($scope.product);
+                alert('Your item has been added to the shopping cart!');
+              };
         }
     ])
     .controller("SingleProductController", [
@@ -74,7 +81,8 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
         "$resource",
         "$routeParams",
         "Products",
-        function (SEOService, $scope, $location, $resource, $routeParams, Products) {
+        "CartService",
+        function (SEOService, $scope, $location, $resource, $routeParams, Products, CartService) {
             $scope.product = Products.get({ id: $routeParams.id }, function (success) {
                 SEOService.setSEO({
                     title: "Homeward Bound | " + $scope.product.ProductName,
@@ -83,6 +91,11 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
                     description: $scope.product.description
                 });
             });
+
+            $scope.addToCart = function() {
+                CartService.addItem($scope.product);
+                alert('Your item has been added to the shopping cart!');
+              };
         }
     ])
     .controller("ContactController", [
@@ -118,19 +131,19 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
             };
         }
     ])
-    .controller("CartController", [
-        "$scope",
-        "$location",
-        ($scope.removeItem = function () {
-            alert("Are you sure you want to remove this item?");
-            $scope.items = JSON.parse(localStorage("cart"));
-            if ($scope.items.quantity == "1") {
-                // delete from cart all together
-            } else {
-                $scope.items.quantity = $scope.items.quantity - 1;
-            }
-        })
-    ])
+    // .controller("CartController", [
+    //     "$scope",
+    //     "$location",
+    //     ($scope.removeItem = function () {
+    //         alert("Are you sure you want to remove this item?");
+    //         $scope.items = JSON.parse(localStorage("cart"));
+    //         if ($scope.items.quantity == "1") {
+    //             // delete from cart all together
+    //         } else {
+    //             $scope.items.quantity = $scope.items.quantity - 1;
+    //         }
+    //     })
+    // ])
     .controller("PaymentController", [
         "SEOService",
         "$scope",

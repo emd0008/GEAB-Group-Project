@@ -71,11 +71,11 @@ angular
         })
         .when("/cart", {
           templateUrl: "views/cart.html",
-          controller: ""
+          controller: "PaymentController"
         })
         .when("/checkout", {
           templateUrl: "views/checkout.html",
-          controller: "CheckoutController"
+          controller: "PaymentController"
         })
         .when("/payment", {
           templateUrl: "views/payment.html",
