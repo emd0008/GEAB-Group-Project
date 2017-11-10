@@ -203,14 +203,9 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
                     );
                   }
                 });
-<<<<<<< HEAD
-            };
-    }])
-=======
               };
         }
     ])
->>>>>>> 0ec9bb3ae750a029b171d280915758920907bca1
     .controller("LoginController", [
         "$scope", 
         function($scope) {
