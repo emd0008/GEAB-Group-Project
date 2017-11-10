@@ -109,10 +109,11 @@ a.navbar-brand {
 }
 
 #jumboDogs {
-  background-image: url("/images/cutegoldens.jpg");
+  background-image: url("/images/puppiesandkittens.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 0 -190px;
   width: 100%;
 }
 
@@ -199,7 +200,10 @@ a.navbar-brand {
 }
 
 #jumboService {
+  background-position: 0 -80px;
   background-image: url("images/petserv.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #jumboVet {

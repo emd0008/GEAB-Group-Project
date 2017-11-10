@@ -21,7 +21,7 @@
                                     <img class="media-object" src="{{ item.image }}" style="width: 72px; height: 72px;"> </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">
-                                        <a href="#">{{ item.name }}</a>
+                                        <a href="#">{{ item.ProductName }}</a>
                                     </h4>
 
 
@@ -32,10 +32,10 @@
                             <input type="email" class="form-control" id="exampleInputEmail1" value="{{ item.quantity }}">
                         </td>
                         <td class="col-md-1 text-center">
-                            <strong>${{ item.price }}</strong>
+                            <strong>{{ item.price | currency }}</strong>
                         </td>
                         <td class="col-md-1 text-center">
-                            <strong>${{ item.price * item.quantity }}</strong>
+                            <strong>{{ item.price * item.quantity | currency }}</strong>
                         </td>
                         <td class="col-md-1">
                             <button type="button" class="btn btn-danger" ng-click="removeItem(item.id)">
