@@ -48,22 +48,6 @@ angular
       });
     }
   ])
-  .controller("SingleAnimalController", [
-    "SEOService",
-    "$scope",
-    "$location",
-    "$resource",
-    "$routeParams",
-    function(SEOService, $scope, $location, $resource, $routeParams) {
-      SEOService.setSEO({
-        title: "Shop Homeward Bound",
-        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
-        url: $location.url(),
-        description: "Shop Homeward Bound"
-      });
-      
-    }
-  ])
   .controller("ProductsController", [
     "SEOService",
     "$scope",
@@ -267,7 +251,6 @@ angular
       };
     }
   ])
- 
   .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
     UserService.me()
     .then((loggedInUser) => {
@@ -290,11 +273,28 @@ angular
             console.log(err);
         });
     }
-}])
-  .controller("ApplyController", [
-    "$scope",
-    "$location",
-    "$resource",
-    function($scope, $location, $resource) {}
-  ]);
+}]);
+
+  // .controller("SingleAnimalController", [
+  //   "SEOService",
+  //   "$scope",
+  //   "$location",
+  //   "$resource",
+  //   "$routeParams",
+  //   function(SEOService, $scope, $location, $resource, $routeParams) {
+  //     SEOService.setSEO({
+  //       title: "Shop Homeward Bound",
+  //       image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+  //       url: $location.url(),
+  //       description: "Shop Homeward Bound"
+  //     });
+      
+  //   }
+  // ])
+  // .controller("ApplyController", [
+  //   "$scope",
+  //   "$location",
+  //   "$resource",
+  //   function($scope, $location, $resource) {}
+  // ]);
 
