@@ -34,6 +34,24 @@ angular
       });
     }
   ])
+  .controller("LogOutController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    "UserService",
+    function(SEOService, $scope, $location, $resource, UserService) {
+      SEOService.setSEO({
+        title: "Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Homeward Bound"
+      });
+      UserService.logout().then(() => {
+        $location.path("/");
+      });
+    }
+  ])
   .controller("AboutController", [
     "SEOService",
     "$scope",
@@ -254,14 +272,11 @@ angular
     }
   ])
   .controller("LoginController", [
-    "$rootScope",
     "$scope",
     "$location",
     "UserService",
-    function($rootScope, $scope, $location, UserService) {
+    function($scope, $location, UserService) {
       UserService.me().then(loggedInUser => {
-        $rootScope.logInOut = "Log Out";
-        console.log($rootScope.logInOut);
         redirect();
       });
 
@@ -279,8 +294,6 @@ angular
       $scope.login = function() {
         UserService.login($scope.email, $scope.password).then(
           user => {
-            $rootScope.logInOut = "Log Out";
-
             redirect();
           },
           err => {
