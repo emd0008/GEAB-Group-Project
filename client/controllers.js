@@ -267,10 +267,34 @@ angular
       };
     }
   ])
-  .controller("LoginController", ["$scope", function($scope) {}])
+ 
+  .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+    UserService.me()
+    .then((loggedInUser) => {
+        redirect();
+    });
+
+    function redirect() {
+        let dest = $location.search().dest;
+        if (!dest) {
+            dest = '/';
+        }
+        $location.replace().path(dest).search('dest', null);
+    }
+    
+    $scope.login = function() {
+        UserService.login($scope.email, $scope.password)
+        .then((user) => {
+            redirect();
+        }, (err) => {
+            console.log(err);
+        });
+    }
+}])
   .controller("ApplyController", [
     "$scope",
     "$location",
     "$resource",
     function($scope, $location, $resource) {}
   ]);
+
