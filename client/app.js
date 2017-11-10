@@ -19,7 +19,7 @@ angular
         })
         .when("/about", {
           templateUrl: "views/about.html",
-          controller: ""
+          controller: "AboutController"
         })
         .when("/apply", {
           templateUrl: "views/apply.html",
@@ -71,11 +71,11 @@ angular
         })
         .when("/cart", {
           templateUrl: "views/cart.html",
-          controller: ""
+          controller: "PaymentController"
         })
         .when("/checkout", {
           templateUrl: "views/checkout.html",
-          controller: "CheckoutController"
+          controller: "PaymentController"
         })
         .when("/payment", {
           templateUrl: "views/payment.html",

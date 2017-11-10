@@ -5,7 +5,7 @@ angular.module("MyNewPet.factories", [])
   }
 ])
 .factory("Payment", ["$resource", function($resource){
-  return $resource("/api/payment/");
+  return $resource("/api/payments/:id", { id: '@id' });
 }])
 .factory("Products", ["$resource", function($resource) {
   return $resource("/api/products/:id",{ id: "@id" },

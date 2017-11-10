@@ -42,5 +42,8 @@ angular.module("MyNewPet.services", [])
           return product.id !== id;
         })
       };
+      this.emptyCart = function() {
+        cartItems = []
+      }
     }
   ]);
