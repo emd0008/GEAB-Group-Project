@@ -54,17 +54,24 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
         "$resource",
         "Products",
         "$routeParams",
-        function (SEOService, $scope, $location, $resource, Products, $routeParams) {
+        "CartService",
+        function (SEOService, $scope, $location, $resource, Products, $routeParams, CartService) {
             SEOService.setSEO({
                 title: "Shop Homeward Bound",
                 image: "http://" + $location.host() + "/images/dog-shopping.jpg",
                 url: $location.url(),
                 description: "Shop Homeward Bound"
             });
+
             $scope.products = Products.queryBySubcategory({
                 SubCatId: $routeParams.subcategoryid
             });
-            console.log($scope.products);
+            console.log("Log for " + $scope.products);
+
+            $scope.addToCart = function() {
+                CartService.addItem($scope.product);
+                alert('Your item has been added to the shopping cart!');
+              };
         }
     ])
     .controller("SingleProductController", [
@@ -74,7 +81,8 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
         "$resource",
         "$routeParams",
         "Products",
-        function (SEOService, $scope, $location, $resource, $routeParams, Products) {
+        "CartService",
+        function (SEOService, $scope, $location, $resource, $routeParams, Products, CartService) {
             $scope.product = Products.get({ id: $routeParams.id }, function (success) {
                 SEOService.setSEO({
                     title: "Homeward Bound | " + $scope.product.ProductName,
@@ -83,6 +91,11 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
                     description: $scope.product.description
                 });
             });
+
+            $scope.addToCart = function() {
+                CartService.addItem($scope.product);
+                alert('Your item has been added to the shopping cart!');
+              };
         }
     ])
     .controller("ContactController", [
@@ -118,54 +131,92 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
             };
         }
     ])
-    .controller("CartController", [
-        "$scope",
-        "$location",
-        ($scope.removeItem = function () {
-            alert("Are you sure you want to remove this item?");
-            $scope.items = JSON.parse(localStorage("cart"));
-            if ($scope.items.quantity == "1") {
-                // delete from cart all together
-            } else {
-                $scope.items.quantity = $scope.items.quantity - 1;
-            }
-        })
-    ])
+    // .controller("CartController", [
+    //     "$scope",
+    //     "$location",
+    //     ($scope.removeItem = function () {
+    //         alert("Are you sure you want to remove this item?");
+    //         $scope.items = JSON.parse(localStorage("cart"));
+    //         if ($scope.items.quantity == "1") {
+    //             // delete from cart all together
+    //         } else {
+    //             $scope.items.quantity = $scope.items.quantity - 1;
+    //         }
+    //     })
+    // ])
     .controller("PaymentController", [
         "SEOService",
         "$scope",
         "$location",
         "Payment",
-        function (SEOService, $scope, $location, Payment) {
+        "CartService",
+        function(SEOService, $scope, $location, Payment, CartService) {
             SEOService.setSEO({
                 title: "Homeward Bound | Checkout",
                 image: "http://" + $location.host() + "/images/dog-shopping.jpg",
                 url: $location.url(),
                 description: "Homeward Bound Checkout"
             });
-            let elements = stripe.elements();
-            let card = elements.create("card");
-            card.mount("#card-field");
-            $scope.process = function () {
-                stripe.createToken(card).then(result => {
-                    if (result.error) {
-                        $scope.error = result.error.message;
-                    } else {
-                        let p = new Payment({
-                            token: result.token.id,
-                            amount: $scope.amount
-                        });
-                        p.$save(
-                            function () {
-                                $location.path("/");
-                            },
-                            function (err) {
-                                $scope.error = err.data;
-                            }
-                        );
+            if (localStorage.getItem("cart" === '')) {
+                console.log("No items in cart")
+              } else {
+                $scope.items = JSON.parse(localStorage.getItem("cart"));
+                console.log($scope.items);
+              };
+        
+              $scope.removeItem = function() {
+                alert("Are you sure you want to remove this item?");
+                $scope.items = JSON.parse(localStorage("cart"));
+                if ($scope.items.quantity == "1") {
+                  // delete from cart all together
+                } else {
+                  $scope.items.quantity = $scope.items.quantity - 1;
+                }
+              }
+        
+              let elements = stripe.elements();
+              let card = elements.create("card", {
+                style: {
+                  base: {
+                    iconColor: "#666EE8",
+                    color: "#31325F",
+                    lineHeight: "25px",
+                    fontWeight: 300,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    fontSize: "15px",
+        
+                    "::placeholder": {
+                      color: "#CFD7E0"
                     }
+                  }
+                }
+              });
+              card.mount("#card-field");
+        
+              $scope.purchase = function() {
+                stripe.createToken(card).then(function(result) {
+                  if (result.error) {
+                    $scope.error = result.error.message;
+                  } else {
+                    let p = new Purchase({
+                      token: result.token.id,
+                      amount: $scope.amount
+                    });
+        
+                    p.$save(
+                      function() {
+                        alert(
+                          "Thank you for your purchase! You will receive a summary email shortly!"
+                        );
+                        $location.path("/");
+                      },
+                      function(err) {
+                        $scope.err = err;
+                      }
+                    );
+                  }
                 });
-            };
+              };
         }
     ])
     .controller("LoginController", [
