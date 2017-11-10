@@ -226,91 +226,6 @@ angular
                 alert(
                   "Thank you for your purchase! You will receive a summary email shortly!"
                 );
-<<<<<<< HEAD
-            };
-        }
-    ])
-    .controller("CartController", [
-        "$scope",
-        "$location",
-        ($scope.removeItem = function () {
-            alert("Are you sure you want to remove this item?");
-            $scope.items = JSON.parse(localStorage("cart"));
-            if ($scope.items.quantity == "1") {
-                // delete from cart all together
-            } else {
-                $scope.items.quantity = $scope.items.quantity - 1;
-            }
-        })
-    ])
-    .controller("PaymentController", [
-        "SEOService",
-        "$scope",
-        "$location",
-        "Payment",
-        function (SEOService, $scope, $location, Payment) {
-            SEOService.setSEO({
-                title: "Homeward Bound | Checkout",
-                image: "http://" + $location.host() + "/images/dog-shopping.jpg",
-                url: $location.url(),
-                description: "Homeward Bound Checkout"
-            });
-            let elements = stripe.elements();
-            let card = elements.create("card");
-            card.mount("#card-field");
-            $scope.process = function () {
-                stripe.createToken(card).then(result => {
-                    if (result.error) {
-                        $scope.error = result.error.message;
-                    } else {
-                        let p = new Payment({
-                            token: result.token.id,
-                            amount: $scope.amount
-                        });
-                        p.$save(
-                            function () {
-                                $location.path("/");
-                            },
-                            function (err) {
-                                $scope.error = err.data;
-                            }
-                        );
-                    }
-                });
-            };
-        }
-    ])
-    .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
-        UserService.me()
-        .then((loggedInUser) => {
-            redirect();
-        });
-    
-        function redirect() {
-            let dest = $location.search().dest;
-            if (!dest) {
-                dest = '/';
-            }
-            $location.replace().path(dest).search('dest', null);
-        }
-        
-        $scope.login = function() {
-            UserService.login($scope.email, $scope.password)
-            .then((user) => {
-                redirect();
-            }, (err) => {
-                console.log(err);
-            });
-        }
-    }]);
-// .controller("LoginController", ["$scope", function($scope) {}]);
-// .controller("ApplyController", [
-//     "$scope",
-//     "$location",
-//     "$resource",
-//     function($scope, $location, $resource) {}
-// ]);
-=======
                 $location.path("/");
               },
               function(err) {
@@ -322,11 +237,34 @@ angular
       };
     }
   ])
-  .controller("LoginController", ["$scope", function($scope) {}])
+ 
+  .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+    UserService.me()
+    .then((loggedInUser) => {
+        redirect();
+    });
+
+    function redirect() {
+        let dest = $location.search().dest;
+        if (!dest) {
+            dest = '/';
+        }
+        $location.replace().path(dest).search('dest', null);
+    }
+    
+    $scope.login = function() {
+        UserService.login($scope.email, $scope.password)
+        .then((user) => {
+            redirect();
+        }, (err) => {
+            console.log(err);
+        });
+    }
+}])
   .controller("ApplyController", [
     "$scope",
     "$location",
     "$resource",
     function($scope, $location, $resource) {}
   ]);
->>>>>>> 41d026766de8c61ac9869c3229ed359a6c2e9dd8
+
