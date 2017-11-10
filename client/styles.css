@@ -131,6 +131,7 @@ a.navbar-brand {
 
 #dropdownMenuLink {
     font-family: "Lobster", cursive;
+    font-size: 20px;
 }
 
 .labels {
@@ -172,7 +173,7 @@ a.navbar-brand {
 #jumboAbout {
     margin: 30px;
     margin-bottom: 30px;
-    margin-left: 100px;
+    margin-left: 150px;
     text-align: center;
 }
 
@@ -215,6 +216,7 @@ a.navbar-brand {
 .contact {
     padding-bottom: 45px;
 }
+
 
 /* Login View */
 
