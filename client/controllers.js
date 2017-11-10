@@ -157,6 +157,7 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
                         });
                         p.$save(
                             function () {
+                                alert("Thank you for your payment!");
                                 $location.path("/");
                             },
                             function (err) {
@@ -166,8 +167,7 @@ angular.module("MyNewPet.controllers", ["ngRoute"])
                     }
                 });
             };
-        }
-    ])
+    }])
     .controller("LoginController", [
         "$scope", 
         function($scope) {
