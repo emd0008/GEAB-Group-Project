@@ -1,18 +1,19 @@
 <main-nav active-page="'login'"></main-nav>
 
-<form class ng-submit="login()">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1ng-model="email "aria-describedby="emailHelp" ng-model="email" placeholder="Enter email">
+<div class="login">
+    <form class ng-submit="login()">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail" ng-model=" email " aria-describedby="emailHelp " ng-model="email " placeholder="Enter email">
 
-    </div>
+        </div>
 
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password"  class="form-control" id="exampleInputPassword1" ng-model="password" placeholder="Password">
-    </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1 ">Password</label>
+            <input type="password " class="form-control " id="exampleInputPassword1 " ng-model="password " placeholder="Password ">
+        </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-<main-footer class="fixed-bottom"></main-footer>
+        <button type="submit " class="btn btn-primary ">Submit</button>
+    </form>
+</div>
+<main-footer class="fixed-bottom "></main-footer>
