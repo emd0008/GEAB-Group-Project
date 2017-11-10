@@ -66,6 +66,10 @@ angular
         SubCatId: $routeParams.subcategoryid
       });
       console.log($scope.products);
+      $scope.addToCart = function() {
+        CartService.addItem($scope.product);
+        alert("Your item has been added to the shopping cart!");
+      };
     }
   ])
   .controller("SingleProductController", [
@@ -84,6 +88,10 @@ angular
           description: $scope.product.description
         });
       });
+      $scope.addToCart = function() {
+        CartService.addItem($scope.product);
+        alert("Your item has been added to the shopping cart!");
+      };
     }
   ])
   .controller("ContactController", [
@@ -132,17 +140,17 @@ angular
         $scope.items = JSON.parse(localStorage.getItem("cart"));
         console.log($scope.items);
       }
-    },
 
-    ($scope.removeItem = function() {
-      alert("Are you sure you want to remove this item?");
-      $scope.items = JSON.parse(localStorage("cart"));
-      if ($scope.items.quantity == "1") {
-        // delete from cart all together
-      } else {
-        $scope.items.quantity = $scope.items.quantity - 1;
-      }
-    })
+      $scope.removeItem = function() {
+        alert("Are you sure you want to remove this item?");
+        $scope.items = JSON.parse(localStorage("cart"));
+        if ($scope.items.quantity == "1") {
+          // delete from cart all together
+        } else {
+          $scope.items.quantity = $scope.items.quantity - 1;
+        }
+      };
+    }
   ])
   .controller("PaymentController", [
     "SEOService",
