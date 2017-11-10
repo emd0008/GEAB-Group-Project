@@ -10,8 +10,10 @@
         <div class="col-lg-6">
             <h2 class="card-title">{{ product.ProductName }}</h2>
             <p class="card-text">{{ product.description }}</p>
-            <a href="/apply" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Apply to Adopt {{ product.ProductName }}!</a>
-            <button ng-click="backToAnimals(product.SubcatID)" class="btn btn-secondary btn-lg active" aria-pressed="true">Back</button>
+            <h4 style="text-align: center">
+                <a href="/apply" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Apply to Adopt {{ product.ProductName }}!</a>
+                <button ng-click="backToAnimals(product.SubcatID)" class="btn btn-secondary btn-lg active" aria-pressed="true">Back</button>
+            </h4>
         </div>
     </div>
 </div>
