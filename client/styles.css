@@ -66,6 +66,7 @@ a.btn.dropdown-toggle {
     color: rgba(255, 255, 255, 0.5);
 }
 
+#dropdownMenuLink,
 a.nav-link {
     color: white;
     font-size: 20px;
