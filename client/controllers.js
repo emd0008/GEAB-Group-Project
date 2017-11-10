@@ -113,6 +113,7 @@ angular
         CartService.addItem($scope.product);
         alert("Your item has been added to the shopping cart!");
       };
+      // function to go back to animals
       $scope.backToAnimals = function(id) {
         if(id === 1 ) {
           $location.path('/animals/subcategory/' + 1);
@@ -122,6 +123,7 @@ angular
           $location.path('/animals/subcategory/' + 21);
         }
       };
+      // function to go back to items
       $scope.backToItems = function(id) {
         if(id === 71) {
           $location.path('/products/subcategory/' + id);
