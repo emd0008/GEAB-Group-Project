@@ -1,19 +1,24 @@
-angular.module("MyNewPet.services", [])
-  .service("SEOService", ["$rootScope",function($rootScope) {
-    this.setSEO = function(data) {
-      $rootScope.seo = {};
-      for (var p in data) {
-        $rootScope.seo[p] = data[p];
-      }
-    };
-  }])
+angular
+  .module("MyNewPet.services", [])
+  .service("SEOService", [
+    "$rootScope",
+    function($rootScope) {
+      this.setSEO = function(data) {
+        $rootScope.seo = {};
+        for (var p in data) {
+          $rootScope.seo[p] = data[p];
+        }
+      };
+    }
+  ])
   .service("CartService", [
-    function() {
+    "$rootScope",
+    function($rootScope) {
       this.getCart = function() {
         if (localStorage.getItem("cart") === null) {
           localStorage.setItem("cart", JSON.stringify([]));
         }
-        console.log(localStorage.getItem("cart"));
+        // console.log(localStorage.getItem("cart"));
         return JSON.parse(localStorage.getItem("cart"));
       };
       this.addItem = function(item) {
@@ -38,12 +43,18 @@ angular.module("MyNewPet.services", [])
         return -1;
       }
       this.removeItem = function(id) {
-        cartItems = cartItems.filter(function(product) {
-          return product.id !== id;
-        })
+        let list = this.getCart();
+        for (i = 0; i < list.length; i++) {
+          if (list[i].id === id) {
+            list.splice(i, 1);
+          }
+          localStorage.setItem("cart", JSON.stringify(list));
+          $rootScope.$broadcast("CartUpdated");
+          console.log(localStorage.cart);
+        }
       };
       this.emptyCart = function() {
-        cartItems = []
-      }
+        cartItems = [];
+      };
     }
   ]);

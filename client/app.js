@@ -71,11 +71,7 @@ angular
         })
         .when("/cart", {
           templateUrl: "views/cart.html",
-          controller: "PaymentController"
-        })
-        .when("/checkout", {
-          templateUrl: "views/checkout.html",
-          controller: "PaymentController"
+          controller: "CartController"
         })
         .when("/payment", {
           templateUrl: "views/payment.html",
