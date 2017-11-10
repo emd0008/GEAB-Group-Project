@@ -19,7 +19,7 @@ angular
         })
         .when("/about", {
           templateUrl: "views/about.html",
-          controller: ""
+          controller: "AboutController"
         })
         .when("/apply", {
           templateUrl: "views/apply.html",

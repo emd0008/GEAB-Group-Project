@@ -1,21 +1,20 @@
 <main-nav active-page="'singleproduct'"></main-nav>
 
 
+
 <div class="container jumbotron">
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-6">
+            <img class="img-fluid" ng-src="{{product.image}}">
+        </div>
+        <div class="col-lg-6">
             <h2 class="card-title">{{ product.ProductName }}</h2>
-            <!-- <div class="card mt-4"> -->
-            <br>
-            <img class="img-fluid" ng-src="{{ product.image }}">
-            <div class="card-body">
-                <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">{{ product.description }}</p>
+            <h4 style="text-align: center">
                 <a href="/apply" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Apply to Adopt {{ product.ProductName }}!</a>
-                <a href="/animals/subcategory/:subcategoryid" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back</a>
-            </div>
-            <!-- </div> -->
+                <button ng-click="backToAnimals(product.SubcatID)" class="btn btn-secondary btn-lg active" aria-pressed="true">Back</button>
+            </h4>
         </div>
     </div>
 </div>
-
 <main-footer></main-footer>

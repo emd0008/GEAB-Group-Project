@@ -17,7 +17,7 @@ angular
       $scope.products = Products.queryBySubcategory({
         SubCatId: $routeParams.subcategoryid
       });
-      console.log($scope.animals);
+      // console.log($scope.animals);
     }
   ])
   .controller("HomeController", [
@@ -34,17 +34,17 @@ angular
       });
     }
   ])
-  .controller("SingleAnimalController", [
+  .controller("AboutController", [
     "SEOService",
     "$scope",
     "$location",
     "$resource",
     function(SEOService, $scope, $location, $resource) {
       SEOService.setSEO({
-        title: "Shop Homeward Bound",
+        title: "About Homeward Bound",
         image: "http://" + $location.host() + "/images/dog-shopping.jpg",
         url: $location.url(),
-        description: "Shop Homeward Bound"
+        description: "About Homeward Bound"
       });
     }
   ])
@@ -250,10 +250,63 @@ angular
       };
     }
   ])
-  .controller("LoginController", ["$scope", function($scope) {}])
-  .controller("ApplyController", [
+  .controller("LoginController", [
+    "$rootScope",
     "$scope",
     "$location",
-    "$resource",
-    function($scope, $location, $resource) {}
+    "UserService",
+    function($rootScope, $scope, $location, UserService) {
+      UserService.me().then(loggedInUser => {
+        $rootScope.logInOut = "Log Out";
+        console.log($rootScope.logInOut);
+        redirect();
+      });
+
+      function redirect() {
+        let dest = $location.search().dest;
+        if (!dest) {
+          dest = "/";
+        }
+        $location
+          .replace()
+          .path(dest)
+          .search("dest", null);
+      }
+
+      $scope.login = function() {
+        UserService.login($scope.email, $scope.password).then(
+          user => {
+            $rootScope.logInOut = "Log Out";
+
+            redirect();
+          },
+          err => {
+            console.log(err);
+          }
+        );
+      };
+    }
   ]);
+
+// .controller("SingleAnimalController", [
+//   "SEOService",
+//   "$scope",
+//   "$location",
+//   "$resource",
+//   "$routeParams",
+//   function(SEOService, $scope, $location, $resource, $routeParams) {
+//     SEOService.setSEO({
+//       title: "Shop Homeward Bound",
+//       image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+//       url: $location.url(),
+//       description: "Shop Homeward Bound"
+//     });
+
+//   }
+// ])
+// .controller("ApplyController", [
+//   "$scope",
+//   "$location",
+//   "$resource",
+//   function($scope, $location, $resource) {}
+// ]);
