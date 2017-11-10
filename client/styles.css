@@ -254,3 +254,7 @@ a.navbar-brand {
 .card-footer {
     text-align: center;
 }
+
+abbr[title] {
+    text-decoration: none;
+}
