@@ -11,6 +11,7 @@
             <p class="card-text">{{ product.description }}</p>
             <h4>{{ product.price | currency }}</h4>
             <button class="btn btn-primary" ng-click="addToCart()">Add To Cart</button>
+            <button class="btn btn-secondary" ng-click="backToItems(product.SubcatID)">Back</button>            
         </div>
     </div>
 </div>
