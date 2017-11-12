@@ -34,6 +34,24 @@ angular
       });
     }
   ])
+  .controller("LogOutController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "$resource",
+    "UserService",
+    function(SEOService, $scope, $location, $resource, UserService) {
+      SEOService.setSEO({
+        title: "Homeward Bound",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Homeward Bound"
+      });
+      UserService.logout().then(() => {
+        $location.path("/");
+      });
+    }
+  ])
   .controller("AboutController", [
     "SEOService",
     "$scope",
@@ -113,36 +131,6 @@ angular
         CartService.addItem($scope.product);
         alert("Your item has been added to the shopping cart!");
       };
-      // function to go back to animals
-      $scope.backToAnimals = function(id) {
-        if (id === 1) {
-          $location.path("/animals/subcategory/" + 1);
-        } else if (id === 11) {
-          $location.path("/animals/subcategory/" + 11);
-        } else if (id === 21) {
-          $location.path("/animals/subcategory/" + 21);
-        }
-      };
-      // function to go back to items
-      $scope.backToItems = function(id) {
-        if (id === 71) {
-          $location.path("/products/subcategory/" + id);
-        } else if (id === 111) {
-          $location.path("/products/subcategory/" + id);
-        } else if (id === 81) {
-          $location.path("/products/subcategory/" + id);
-        } else if (id === 101) {
-          $location.path("/products/subcategory/" + id);
-        } else if (id === 41) {
-          $location.path("/products/subcategory/" + id);
-        } else if (id === 31) {
-          $location.path("/products/subcategory/" + id);
-        } else if (id === 51) {
-          $location.path("/products/subcategory/" + id);
-        } else if (id === 91) {
-          $location.path("/products/subcategory/" + id);
-        }
-      };
     }
   ])
   .controller("ContactController", [
@@ -178,6 +166,49 @@ angular
       };
     }
   ])
+  .controller("CartController", [
+    "SEOService",
+    "$scope",
+    "$location",
+    "Payment",
+    "CartService",
+    function(SEOService, $scope, $location, Payment, CartService) {
+      SEOService.setSEO({
+        title: "Homeward Bound | Checkout",
+        image: "http://" + $location.host() + "/images/dog-shopping.jpg",
+        url: $location.url(),
+        description: "Homeward Bound Checkout"
+      });
+      if (localStorage.getItem("cart") === "") {
+        console.log("No items in cart");
+      } else {
+        $scope.items = JSON.parse(localStorage.getItem("cart"));
+        console.log($scope.items);
+      }
+      $scope.subtotal = 0;
+      $scope.tax = 0;
+      $scope.shipping = 6.49;
+      //   let items = $scope.items
+      function calculate() {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        for (let i = 0; i < cart.length; i++) {
+          $scope.subtotal += cart[i].price * cart[i].quantity;
+          $scope.tax = $scope.subtotal * 0.09;
+          $scope.finalTotal = $scope.subtotal + $scope.tax + $scope.shipping;
+          console.log($scope.subtotal);
+        }
+      }
+
+      calculate();
+      //   $scope.total = subtotal * 1.1;
+
+      $scope.removeItem = function(id) {
+        alert("Are you sure you want to remove this item?");
+        CartService.removeItem(id);
+        location.reload();
+      };
+    }
+  ])
   .controller("PaymentController", [
     "SEOService",
     "$scope",
@@ -191,22 +222,6 @@ angular
         url: $location.url(),
         description: "Homeward Bound Checkout"
       });
-      if (localStorage.getItem("cart" === "")) {
-        console.log("No items in cart");
-      } else {
-        $scope.items = JSON.parse(localStorage.getItem("cart"));
-        console.log($scope.items);
-      }
-
-      $scope.removeItem = function() {
-        alert("Are you sure you want to remove this item?");
-        $scope.items = JSON.parse(localStorage("cart"));
-        if ($scope.items.quantity == "1") {
-          // delete from cart all together
-        } else {
-          $scope.items.quantity = $scope.items.quantity - 1;
-        }
-      };
 
       let elements = stripe.elements();
       let card = elements.create("card", {
@@ -254,14 +269,11 @@ angular
     }
   ])
   .controller("LoginController", [
-    "$rootScope",
     "$scope",
     "$location",
     "UserService",
-    function($rootScope, $scope, $location, UserService) {
+    function($scope, $location, UserService) {
       UserService.me().then(loggedInUser => {
-        $rootScope.logInOut = "Log Out";
-        console.log($rootScope.logInOut);
         redirect();
       });
 
@@ -279,8 +291,6 @@ angular
       $scope.login = function() {
         UserService.login($scope.email, $scope.password).then(
           user => {
-            $rootScope.logInOut = "Log Out";
-
             redirect();
           },
           err => {

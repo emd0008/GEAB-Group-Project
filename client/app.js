@@ -71,11 +71,7 @@ angular
         })
         .when("/cart", {
           templateUrl: "views/cart.html",
-          controller: "PaymentController"
-        })
-        .when("/checkout", {
-          templateUrl: "views/checkout.html",
-          controller: "PaymentController"
+          controller: "CartController"
         })
         .when("/payment", {
           templateUrl: "views/payment.html",
@@ -88,6 +84,10 @@ angular
         .when("/login", {
           templateUrl: "views/login.html",
           controller: "LoginController"
+        })
+        .when("/logout", {
+          templateUrl: "views/logout.html",
+          controller: "LogOutController"
         })
         .otherwise({
           redirectTo: "/"
