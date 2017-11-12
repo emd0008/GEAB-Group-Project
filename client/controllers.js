@@ -329,21 +329,6 @@ angular
       };
     }
   ]);
-
-// .controller("SingleAnimalController", [
-//   "SEOService",
-//   "$scope",
-//   "$location",
-//   "$resource",
-//   "$routeParams",
-//   function(SEOService, $scope, $location, $resource, $routeParams) {
-//     SEOService.setSEO({
-//       title: "Shop Homeward Bound",
-//       image: "http://" + $location.host() + "/images/dog-shopping.jpg",
-//       url: $location.url(),
-//       description: "Shop Homeward Bound"
-//     });
-
 //   }
 // ])
 // .controller("ApplyController", [
