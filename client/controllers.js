@@ -131,6 +131,35 @@ angular
         CartService.addItem($scope.product);
         alert("Your item has been added to the shopping cart!");
       };
+
+      $scope.backToAnimals = function (id) {
+        if (id === 1) {
+          $location.path('/animals/subcategory/' + 1);
+        } else if (id === 11) {
+          $location.path('/animals/subcategory/' + 11);
+        } else if (id === 21) {
+          $location.path('/animals/subcategory/' + 21);
+        }
+      };
+      $scope.backToItems = function (id) {
+        if (id === 71) {
+          $location.path('/products/subcategory/' + id);
+        } else if (id === 111) {
+          $location.path('/products/subcategory/' + id);
+        } else if (id === 81) {
+          $location.path('/products/subcategory/' + id);
+        } else if (id === 101) {
+          $location.path('/products/subcategory/' + id);
+        } else if (id === 41) {
+          $location.path('/products/subcategory/' + id);
+        } else if (id === 31) {
+          $location.path('/products/subcategory/' + id);
+        } else if (id === 51) {
+          $location.path('/products/subcategory/' + id);
+        } else if (id === 91) {
+          $location.path('/products/subcategory/' + id);
+        }
+      };
     }
   ])
   .controller("ContactController", [
