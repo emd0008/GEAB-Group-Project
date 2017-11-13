@@ -24,16 +24,6 @@ body {
   -o-background-size: cover;
 }
 
-.about-header {
-  height: 50vh;
-  min-height: 300px;
-  background: url("/images/about.jpg") center center no-repeat scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  background-position: 0px -200px;
-}
 .logout-header {
   height: 50vh;
   min-height: 300px;
@@ -108,15 +98,6 @@ a.navbar-brand {
   margin-bottom: 30px;
 }
 
-#jumboDogs {
-  background-image: url("/images/puppiesandkittens.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 -190px;
-  width: 100%;
-}
-
 #jumboCats {
   background: url("/images/kittens.jpg") center center no-repeat;
 }
@@ -178,20 +159,7 @@ a.navbar-brand {
 
 /* Contact view */
 
-#jumboContact {
-  background: url("/images/contact.jpg") center center no-repeat scroll;
-  background: url("/images/contact.jpg") center top no-repeat scroll;
-  background-position: -150px -200px;
-}
-
 /* About Us view */
-
-#jumboAbout {
-  margin: 30px;
-  margin-bottom: 30px;
-  margin-left: 150px;
-  text-align: center;
-}
 
 /* Services view */
 
@@ -202,8 +170,33 @@ a.navbar-brand {
 #jumboService {
   background-position: 0 -80px;
   background-image: url("images/petserv.jpg");
+  background-position: center 55%;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+}
+#jumboAbout {
+  background: url("/images/about.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+#jumboDogs {
+  background-image: url("/images/puppiesandkittens.jpg");
+  background-position: center 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+#jumboContact {
+  background-image: url("images/contact.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
 }
 
 #jumboVet {
