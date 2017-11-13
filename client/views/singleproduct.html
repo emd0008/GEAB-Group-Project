@@ -11,24 +11,9 @@
             <p class="card-text">{{ product.description }}</p>
             <h4 style="text-align: center">{{ product.price | currency }}</br>
                 <button class="btn btn-primary btn-lg" ng-click="addToCart()">Add To Cart</button>
-                <!-- <button class="btn btn-secondary btn-lg" ng-click="backToItems(product.SubcatID)">Back</button> -->
+                <button class="btn btn-secondary btn-lg active" ng-click="backToItems(product.SubcatID)" aria-pressed="true">Back</button>   
             </h4>
         </div>
     </div>
 </div>
-<!-- <div class="container jumbotron">
-    <div class="row">
-        <div class="col-lg-9">
-            <h2 class="card-title">{{ product.ProductName }}</h2>
-            <br>
-            <img class="img-fluid" ng-src="{{product.image}}">
-            <div class="card-body">
-                <h4>{{ product.price | currency }}</h4>
-                <p class="card-text">{{ product.description }}</p>
-                <button class="btn btn-primary" ng-click="addToCart()">Add To Cart</button>
-                <button class="btn btn-secondary" ng-click="backToItems(product.SubcatID)">Back</button>
-            </div>
-        </div>
-    </div>
-</div> -->
 <main-footer></main-footer>
