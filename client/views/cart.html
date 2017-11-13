@@ -17,11 +17,11 @@
                     <tr ng-repeat="item in items">
                         <td class="col-md-6">
                             <div class="media">
-                                <a class="thumbnail pull-left" href="#">
+                                <a class="thumbnail pull-left" href="products/{{ item.id }}">
                                     <img class="media-object" src="{{ item.image }}" style="width: 72px; height: 72px;"> </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">
-                                        <a href="#">{{ item.name }}</a>
+                                        <a href="#">{{ item.ProductName }}</a>
                                     </h4>
 
 

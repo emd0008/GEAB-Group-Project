@@ -44,9 +44,9 @@ body {
 }
 
 
-/* .card-img-top {
-    height: 200px
-} */
+.product-image {
+    height: 225px
+}
 
 h1,
 h2,
@@ -136,6 +136,15 @@ a.navbar-brand {
     width: 100%;
 }
 
+#products-button {
+    margin: 3px;
+}
+
+/* .product-list {
+    border: gray;
+    border-style: groove;
+    margin: 1px;
+} */
 
 /* Single Animal view */
 
