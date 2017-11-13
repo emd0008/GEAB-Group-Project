@@ -9,8 +9,9 @@ angular
           activePage: "="
         },
         controller: function($scope, $rootScope) {
-          $rootScope.logInOut = "Log In";
-          console.log($rootScope.logInOut);
+          $scope.logInOut = $rootScope.logInOut;
+          // $rootScope.logInOut = "Log In";
+          // console.log($rootScope.logInOut);
         }
       };
     }

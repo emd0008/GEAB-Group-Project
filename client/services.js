@@ -58,56 +58,64 @@ angular
       };
     }
   ])
-  .service('UserService', ['$http', '$location', function($http, $location) {
-    let currentUser;
+  .service("UserService", [
+    "$http",
+    "$location",
+    "$rootScope",
+    function($http, $location, $rootScope) {
+      let currentUser;
 
-    this.isLoggedIn = function() {
+      this.isLoggedIn = function() {
         if (currentUser) {
-            return true;
+          return true;
         } else {
-            return false;
+          return false;
         }
-    }
+      };
 
-    this.loginRedirect = function(){
+      this.loginRedirect = function() {
         let current = $location.path();
-        $location.path('/login').search('dest', current);
-    }
+        $location.path("/login").search("dest", current);
+      };
 
-    this.login = function(email, password) {
+      this.login = function(email, password) {
         return $http({
-            method: 'POST',
-            url: '/api/users/login',
-            data: {
-                email: email,
-                password: password
-            }
-        }).then((response) => {
-            currentUser = response.data;
-            return currentUser;
+          method: "POST",
+          url: "/api/users/login",
+          data: {
+            email: email,
+            password: password
+          }
+        }).then(response => {
+          currentUser = response.data;
+          $rootScope.logInOut = "Log Out";
+          return currentUser;
         });
-    }
+      };
 
-    this.logout = function() {
+      this.logout = function() {
         return $http({
-            method: 'GET',
-            url: '/api/users/logout'
+          method: "GET",
+          url: "/api/users/logout"
         }).then(() => {
-            currentUser = undefined;
+          currentUser = undefined;
+          $rootScope.logInOut = "Log In";
         });
-    }
+      };
 
-    this.me = function() {
+      this.me = function() {
         if (currentUser) {
-            return Promise.resolve(currentUser);
+          return Promise.resolve(currentUser);
         } else {
-            return $http({
-                method: 'GET',
-                url: '/api/users/me'
-            }).then((response) => {
-                currentUser = response.data;
-                return currentUser;
-            });
+          return $http({
+            method: "GET",
+            url: "/api/users/me"
+          }).then(response => {
+            currentUser = response.data;
+            $rootScope.logInOut = "Log Out";
+            return currentUser;
+          });
         }
+      };
     }
-}]);
+  ]);
