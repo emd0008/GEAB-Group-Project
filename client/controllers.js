@@ -329,11 +329,3 @@ angular
       };
     }
   ]);
-//   }
-// ])
-// .controller("ApplyController", [
-//   "$scope",
-//   "$location",
-//   "$resource",
-//   function($scope, $location, $resource) {}
-// ]);
