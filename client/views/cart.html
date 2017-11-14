@@ -17,7 +17,7 @@
                     <tr ng-repeat="item in items">
                         <td class="col-md-6">
                             <div class="media">
-                                <a class="thumbnail pull-left" href="#">
+                                <a class="thumbnail pull-left" href="products/{{ item.id }}">
                                     <img class="media-object" src="{{ item.image }}" style="width: 72px; height: 72px;"> </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">
@@ -130,7 +130,7 @@
                         <td>   </td>
                         <td>   </td>
                         <td>
-                            <h2>Total</h2>
+                            <h2>Total w/Tax & Shipping</h2>
                         </td>
                         <td class="text-right">
                             <h2>
