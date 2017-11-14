@@ -59,7 +59,7 @@ angular
         })
         .when("/dogwalkers", {
           templateUrl: "views/dogwalkers.html",
-          controller: ""
+          controller: "WalkerController"
         })
         .when("/obedience", {
           templateUrl: "views/obedience.html",
@@ -67,7 +67,7 @@ angular
         })
         .when("/grooming", {
           templateUrl: "views/grooming.html",
-          controller: ""
+          controller: "GroomingController"
         })
         .when("/cart", {
           templateUrl: "views/cart.html",
